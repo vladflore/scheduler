@@ -1,11 +1,3 @@
-body {
-  margin: 0;
-}
-
-.pyscript {
-  margin: 0.5rem;
-}
-
 html {
   font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
@@ -13,51 +5,8 @@ html {
   line-height: 1.5;
 }
 
-nav {
-  position: sticky;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-}
-
-.logo {
-  height: 60px;
-  max-width: 100%;
-}
-
-.title {
-  text-decoration: none;
-  /* text-decoration-line: none;
-  text-decoration-style: initial;
-  text-decoration-color: initial; */
-  font-weight: 400;
-  font-size: 1.5em;
-  line-height: 2em;
-  white-space: nowrap;
-}
-
-.app-header {
-  display: flex;
-  align-items: center;
-  padding: 0.25rem 0.5rem;
-}
-
-@media (max-width: 576px) {
-  .app-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .title {
-    font-size: 1.25em;
-    line-height: 1.5em;
-  }
-
-  .logo {
-    height: 60px;
-  }
+body {
+  margin: 12px;
 }
 
 #loading {
@@ -66,19 +15,91 @@ nav {
   background: transparent;
 }
 
-.btn-outline-gold {
-  color: #ba945e;
-  border: 1px solid #ba945e;
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.btn-outline-red {
+  color: #f12929;
+  border: 1px solid #f12929;
   background-color: transparent;
 }
 
-.btn-outline-gold:hover {
-  background-color: #ba945e;
+.btn-outline-red:hover {
+  background-color: #f12929;
   color: #fff;
 }
 
-.golden-text {
-  font-size: 1.1rem;
-  color: #ba945e;
-  letter-spacing: 0.5px;
+.responsive-bg {
+  background: url("../images/DSCF2013-scaled.jpg") center center / cover
+    no-repeat;
+  background-color: rgba(255, 255, 255, 0.7);
+  background-blend-mode: lighten;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+/* Start Classes related styling */
+
+.schedule-grid {
+  display: grid;
+  grid-template-columns: 120px repeat(7, 1fr);
+  gap: 5px;
+  width: 100%;
+}
+.schedule-header,
+.schedule-time {
+  font-weight: bold;
+  text-align: center;
+  padding: 8px 0;
+  background: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 1em;
+  min-height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.schedule-today {
+  background: rgba(241, 41, 41, 0.3) !important;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+.schedule-cell {
+  min-height: 60px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  font-size: 12px;
+}
+.schedule-cell-empty {
+  background: #fff;
+  opacity: 0.5;
+}
+@media (max-width: 700px) {
+  .schedule-grid {
+    grid-template-columns: 90px repeat(7, 1fr);
+    font-size: 0.95em;
+  }
+}
+.whatsapp-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #25d366;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1em;
+}
+/* End Classes related styling */

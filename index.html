@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="UTF-8" />
@@ -30,60 +29,26 @@
       });
       loading.showModal();
     </script>
-    <title>Scheduler</title>
-    <link rel="icon" type="image/png" href="./assets/images/favicon.jpeg" />
   </head>
 
   <body>
     <dialog id="loading">
-      <h1>Loading...</h1>
+      <img src="./assets/images/logo.png" class="logo" alt="Loading..." />
     </dialog>
-
-    <nav
-      class="navbar sticky-top py-1"
-      style="background-color: #000000; min-height: 60px"
-    >
-      <div
-        class="container-fluid d-flex align-items-center justify-content-between"
-      >
-        <a href="index.html">
-          <img src="./assets/images/logo.jpeg" class="logo" alt="Logo" />
-        </a>
+    <div id="container" class="p-3 d-none container-fluid responsive-bg">
+      <div class="row justify-content-center">
+      <div class="col-auto">
+        <button
+        class="btn btn-outline-red mb-3"
+        title="Download PDF"
+        py-click="print_schedule"
+        >
+        <i class="bi bi-printer fs-4"></i>
+        </button>
       </div>
-    </nav>
-
-    <section class="pyscript">
-      <main>
-        <section>
-          <div id="container" class="container py-5 d-none">
-            <h2 class="mb-4 text-center">Fitness Classes Scheduler</h2>
-            <div class="mb-3 d-flex gap-2">
-              <button class="btn btn-outline-gold" onclick="printIframe()">
-                <i class="bi bi-printer fs-4"></i>
-              </button>
-              <button id="download-iframe" class="btn btn-outline-gold">
-                <i class="bi bi-download fs-4"></i>
-              </button>
-            </div>
-            <script>
-              function printIframe() {
-                const iframe = document.getElementById("schedule");
-                if (iframe && iframe.contentWindow) {
-                  iframe.contentWindow.focus();
-                  iframe.contentWindow.print();
-                }
-              }
-            </script>
-            <iframe
-              id="schedule"
-              src=""
-              style="width: 100%; height: 800px; border: none"
-            ></iframe>
-          </div>
-        </section>
-      </main>
-    </section>
-
+      <div id="schedule" class="col-12"></div>
+      </div>
+    </div>
     <script type="py" src="./main.py" config="./pyscript.toml"></script>
   </body>
 </html>

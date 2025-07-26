@@ -4,3 +4,4 @@ description = ""
 packages = ["fpdf2==2.8.3", "pillow==10.0.0"]
 
 [files]
+"./data.py" = "data.py"
