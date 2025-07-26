@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+}
+
+.pyscript {
+  margin: 0.5rem;
+}
+
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  line-height: 1.5;
+}
+
+nav {
+  position: sticky;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+
+.logo {
+  height: 60px;
+  max-width: 100%;
+}
+
+.title {
+  text-decoration: none;
+  /* text-decoration-line: none;
+  text-decoration-style: initial;
+  text-decoration-color: initial; */
+  font-weight: 400;
+  font-size: 1.5em;
+  line-height: 2em;
+  white-space: nowrap;
+}
+
+.app-header {
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 576px) {
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .title {
+    font-size: 1.25em;
+    line-height: 1.5em;
+  }
+
+  .logo {
+    height: 60px;
+  }
+}
+
+#loading {
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.btn-outline-gold {
+  color: #ba945e;
+  border: 1px solid #ba945e;
+  background-color: transparent;
+}
+
+.btn-outline-gold:hover {
+  background-color: #ba945e;
+  color: #fff;
+}
+
+.golden-text {
+  font-size: 1.1rem;
+  color: #ba945e;
+  letter-spacing: 0.5px;
+}
