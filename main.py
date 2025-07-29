@@ -1,18 +1,29 @@
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from collections import defaultdict
 from pyweb import pydom
 from pyscript import display
 from data import FitnessClass
 from data import classes
+from pyodide.ffi import create_proxy
 
 
-def render_fitness_classes(classes: list[FitnessClass]) -> str:
+def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) -> str:
     classes_by_day = defaultdict(list)
     for cls in classes:
         day = cls.start.date()
         classes_by_day[day].append(cls)
 
     days = sorted(classes_by_day.keys())
+
+    if days:
+        if len(days) < 7:
+            last_day = days[-1]
+            week_start_day = last_day - timedelta(days=last_day.weekday())
+            days = [week_start_day + timedelta(days=i) for i in range(7)]
+    else:
+        week_start_day = highlighted_date - timedelta(days=highlighted_date.weekday())
+        days = [week_start_day + timedelta(days=i) for i in range(7)]
+    days = sorted(days)
 
     time_intervals = set()
     for cls in classes:
@@ -29,11 +40,10 @@ def render_fitness_classes(classes: list[FitnessClass]) -> str:
 
     html.append('<div class="schedule-grid">')
     html.append('<div class="schedule-header">Time / Date</div>')
-    today = date.today()
     for day in days:
         week_day = day.strftime("%A")
         date_num = day.strftime("%d")
-        if day == today:
+        if day == highlighted_date:
             html.append(
                 f'<div class="schedule-header">'
                 f"{week_day}<br>"
@@ -77,8 +87,44 @@ def render_fitness_classes(classes: list[FitnessClass]) -> str:
     return "\n".join(html)
 
 
-def print_schedule(event):
-    display("Printing schedule...")
+def print_schedule(event): ...
 
 
-pydom["#schedule"][0]._js.innerHTML = render_fitness_classes(classes)
+if classes:
+    min_date = min(cls.start.date() for cls in classes)
+    max_date = max(cls.start.date() for cls in classes)
+else:
+    min_date = date.today()
+    max_date = date.today()
+
+
+current_week_start_date = date.today() - timedelta(days=date.today().weekday())
+current_week_end_date = current_week_start_date + timedelta(days=6)
+
+filtered_classes = [
+    cls
+    for cls in classes
+    if current_week_start_date <= cls.start.date() <= current_week_end_date
+]
+
+pydom["#schedule"][0]._js.innerHTML = render_fitness_classes(
+    filtered_classes, date.today()
+)
+pydom["#schedule-date"][0]._js.value = datetime.now().strftime("%Y-%m-%d")
+pydom["#schedule-date"][0]._js.min = min_date.strftime("%Y-%m-%d")
+pydom["#schedule-date"][0]._js.max = max_date.strftime("%Y-%m-%d")
+
+
+def on_date_change(evt):
+    new_date = datetime.strptime(evt.target.value, "%Y-%m-%d").date()
+    week_start_date = new_date - timedelta(days=new_date.weekday())
+    week_end_date = week_start_date + timedelta(days=6)
+    filtered_classes = [
+        cls for cls in classes if week_start_date <= cls.start.date() <= week_end_date
+    ]
+    pydom["#schedule"][0]._js.innerHTML = render_fitness_classes(
+        filtered_classes, new_date
+    )
+
+
+pydom["#schedule-date"][0]._js.addEventListener("change", create_proxy(on_date_change))

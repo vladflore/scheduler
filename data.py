@@ -281,4 +281,53 @@ classes: list[FitnessClass] = [
             font_size=12,
         ),
     ),
+    # Monday (2025-08-04)
+    FitnessClass(
+        name="Morning Yoga",
+        start=datetime(2025, 8, 4, 7, 0),
+        end=datetime(2025, 8, 4, 8, 0),
+        instructor="Alice Smith",
+        description="Start your week with gentle yoga.",
+        render_config=FitnessClassRenderConfig(
+            text_color="white",
+            background_color="#388E3C",
+            font_size=12,
+        ),
+    ),
+    FitnessClass(
+        name="HIIT",
+        start=datetime(2025, 8, 4, 8, 30),
+        end=datetime(2025, 8, 4, 9, 15),
+        instructor="Bob Johnson",
+        description="High intensity interval training.",
+        render_config=FitnessClassRenderConfig(
+            text_color="white",
+            background_color="#FBC02D",
+            font_size=12,
+        ),
+    ),
+    FitnessClass(
+        name="Evening Stretch",
+        start=datetime(2025, 8, 4, 18, 0),
+        end=datetime(2025, 8, 4, 19, 0),
+        instructor="Eva Green",
+        description="Relaxing stretch to end Monday.",
+        render_config=FitnessClassRenderConfig(
+            text_color="black",
+            background_color="#B2DFDB",
+            font_size=12,
+        ),
+    ),
+    FitnessClass(
+        name="Advanced Yoga",
+        start=datetime(2025, 8, 15, 18, 0),
+        end=datetime(2025, 8, 15, 19, 0),
+        instructor="Jane Doe",
+        description="Advanced yoga techniques for experienced practitioners.",
+        render_config=FitnessClassRenderConfig(
+            text_color="red",
+            background_color="#9B34AF",
+            font_size=12,
+        ),
+    ),
 ]

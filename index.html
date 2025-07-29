@@ -42,8 +42,19 @@
     <div id="container" class="p-3 d-none container-fluid responsive-bg">
       <div class="row justify-content-center">
         <div class="col-12 d-flex align-items-center mb-3">
+          <label for="schedule-date" class="form-label mb-0 me-2"
+            >Go to date</label
+          >
+          <input
+            id="schedule-date"
+            type="date"
+            class="form-control ms-2"
+            style="max-width: 200px"
+            title="Go to date"
+          />
+          <div class="flex-grow-1"></div>
           <button
-            class="btn btn-outline-red me-2"
+            class="btn btn-outline-red ms-2"
             title="Download PDF"
             py-click="print_schedule"
           >
