@@ -116,7 +116,10 @@ pydom["#schedule-date"][0]._js.max = max_date.strftime("%Y-%m-%d")
 
 
 def on_date_change(evt):
-    new_date = datetime.strptime(evt.target.value, "%Y-%m-%d").date()
+    value = evt.target.value
+    if not value:
+        return
+    new_date = datetime.strptime(value, "%Y-%m-%d").date()
     week_start_date = new_date - timedelta(days=new_date.weekday())
     week_end_date = week_start_date + timedelta(days=6)
     filtered_classes = [

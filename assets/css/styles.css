@@ -41,7 +41,7 @@ body {
 }
 
 .responsive-bg {
-  background: url("../images/DSCF2013-scaled.jpg") center center / cover
+  background: url("../images/schedule-background.jpg") center center / cover
     no-repeat;
   background-color: rgba(255, 255, 255, 0.7);
   background-blend-mode: lighten;
