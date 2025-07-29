@@ -33,20 +33,24 @@
 
   <body>
     <dialog id="loading">
-      <img src="./assets/images/logo.png" class="logo rounded-circle spin" alt="Loading..." />
+      <img
+        src="./assets/images/logo.png"
+        class="logo rounded-circle spin"
+        alt="Loading..."
+      />
     </dialog>
     <div id="container" class="p-3 d-none container-fluid responsive-bg">
       <div class="row justify-content-center">
-      <div class="col-auto">
-        <button
-        class="btn btn-outline-red mb-3"
-        title="Download PDF"
-        py-click="print_schedule"
-        >
-        <i class="bi bi-printer fs-4"></i>
-        </button>
-      </div>
-      <div id="schedule" class="col-12"></div>
+        <div class="col-12 d-flex align-items-center mb-3">
+          <button
+            class="btn btn-outline-red me-2"
+            title="Download PDF"
+            py-click="print_schedule"
+          >
+            <i class="bi bi-printer fs-4"></i>
+          </button>
+        </div>
+        <div id="schedule" class="col-12"></div>
       </div>
     </div>
     <script type="py" src="./main.py" config="./pyscript.toml"></script>
