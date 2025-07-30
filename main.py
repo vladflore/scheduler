@@ -3,8 +3,8 @@ from collections import defaultdict
 from pyweb import pydom
 from pyscript import display
 from data import FitnessClass
-from data import classes
 from pyodide.ffi import create_proxy
+from data import load_classes_from_file
 
 
 def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) -> str:
@@ -89,6 +89,8 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
 
 def print_schedule(event): ...
 
+
+classes = load_classes_from_file()
 
 if classes:
     min_date = min(cls.start.date() for cls in classes)
