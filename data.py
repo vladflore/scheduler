@@ -22,20 +22,22 @@ class FitnessClass:
     )
 
 
-CLASSES_INPUT_FILE = "classes.json"
+CLASSES_INPUT_FILE = "classes_{lang}.json"
 
 
-def load_classes_from_file() -> list[FitnessClass]:
+def load_classes_from_file(language: str = "en") -> list[FitnessClass]:
     classes: list[FitnessClass] = []
 
-    with open(CLASSES_INPUT_FILE, "r") as file:
+    with open(CLASSES_INPUT_FILE.format(lang=language), "r") as file:
         data = json.load(file)
         for fitness_class in data["fitness_classes"]:
             start = datetime.fromisoformat(fitness_class["start"])
             end = datetime.fromisoformat(fitness_class["end"])
             render_config = FitnessClassRenderConfig(
                 text_color=fitness_class["render_config"].get("text_color", "black"),
-                background_color=fitness_class["render_config"].get("background_color", "white"),
+                background_color=fitness_class["render_config"].get(
+                    "background_color", "white"
+                ),
                 font_size=fitness_class["render_config"].get("font_size", 12),
             )
             fitness_class = FitnessClass(

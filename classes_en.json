@@ -1,0 +1,304 @@
+{
+  "fitness_classes": [
+    {
+      "name": "Morning Yoga",
+      "start": "2025-07-28T07:00:00",
+      "end": "2025-07-28T08:00:00",
+      "instructor": "Alice Smith",
+      "description": "Start your week with gentle yoga.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#388E3C",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "HIIT Training",
+      "start": "2025-07-28T08:30:00",
+      "end": "2025-07-28T09:15:00",
+      "instructor": "Bob Johnson",
+      "description": "High intensity interval training.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#FBC02D",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Evening Stretch",
+      "start": "2025-07-28T18:00:00",
+      "end": "2025-07-28T19:00:00",
+      "instructor": "Eva Green",
+      "description": "Relaxing stretch to end your Monday.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#B2DFDB",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Cardio Blast",
+      "start": "2025-07-29T09:00:00",
+      "end": "2025-07-29T10:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Cardio exercise for all levels.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#D32F2F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Core Strengthening",
+      "start": "2025-07-29T10:30:00",
+      "end": "2025-07-29T11:15:00",
+      "instructor": "Cathy Lee",
+      "description": "Strengthen your core muscles.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#FFD54F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Zumba",
+      "start": "2025-07-29T18:00:00",
+      "end": "2025-07-29T19:00:00",
+      "instructor": "Alice Smith",
+      "description": "Dance to get fit.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#F06292",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Spinning",
+      "start": "2025-07-30T08:00:00",
+      "end": "2025-07-30T09:00:00",
+      "instructor": "Eva Green",
+      "description": "Morning spinning class.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#8E24AA",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Pilates",
+      "start": "2025-07-30T09:30:00",
+      "end": "2025-07-30T10:30:00",
+      "instructor": "Cathy Lee",
+      "description": "Strengthen and tone with Pilates.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#64B5F6",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Boxing Basics",
+      "start": "2025-07-30T18:00:00",
+      "end": "2025-07-30T19:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Learn the fundamentals of boxing.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#212121",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Yoga",
+      "start": "2025-07-31T07:30:00",
+      "end": "2025-07-31T08:30:00",
+      "instructor": "Alice Smith",
+      "description": "Flowing yoga for midweek.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#43A047",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Strength Training",
+      "start": "2025-07-31T09:00:00",
+      "end": "2025-07-31T10:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Build muscle and strength.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#FFA726",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Dance Fitness",
+      "start": "2025-07-31T18:30:00",
+      "end": "2025-07-31T19:30:00",
+      "instructor": "Eva Green",
+      "description": "Fun dance workout.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#E1BEE7",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Pilates",
+      "start": "2025-08-01T09:00:00",
+      "end": "2025-08-01T10:00:00",
+      "instructor": "Cathy Lee",
+      "description": "Morning Pilates.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#64B5F6",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Functional Training",
+      "start": "2025-08-01T10:30:00",
+      "end": "2025-08-01T11:15:00",
+      "instructor": "Bob Johnson",
+      "description": "Improve everyday movement.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#388E3C",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Evening Yoga",
+      "start": "2025-08-01T18:00:00",
+      "end": "2025-08-01T19:00:00",
+      "instructor": "Alice Smith",
+      "description": "Relaxing yoga to end the week.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#43A047",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Yoga",
+      "start": "2025-08-02T08:00:00",
+      "end": "2025-08-02T09:00:00",
+      "instructor": "Alice Smith",
+      "description": "Saturday morning yoga.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#388E3C",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Bootcamp",
+      "start": "2025-08-02T09:30:00",
+      "end": "2025-08-02T10:30:00",
+      "instructor": "Bob Johnson",
+      "description": "Outdoor bootcamp session.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#D32F2F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Stretch & Mobility",
+      "start": "2025-08-02T11:00:00",
+      "end": "2025-08-02T12:00:00",
+      "instructor": "Eva Green",
+      "description": "Improve flexibility and mobility.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#B2DFDB",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Pilates",
+      "start": "2025-08-03T09:00:00",
+      "end": "2025-08-03T10:00:00",
+      "instructor": "Cathy Lee",
+      "description": "Sunday Pilates.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#1E88E5",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Family Fitness",
+      "start": "2025-08-03T10:30:00",
+      "end": "2025-08-03T11:15:00",
+      "instructor": "Alice Smith",
+      "description": "Fun exercise for all ages.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#FBC02D",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Meditation",
+      "start": "2025-08-03T18:00:00",
+      "end": "2025-08-03T18:45:00",
+      "instructor": "Eva Green",
+      "description": "Guided meditation session.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#E1BEE7",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Morning Yoga",
+      "start": "2025-08-04T07:00:00",
+      "end": "2025-08-04T08:00:00",
+      "instructor": "Alice Smith",
+      "description": "Start your week with gentle yoga.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#388E3C",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "HIIT Training",
+      "start": "2025-08-04T08:30:00",
+      "end": "2025-08-04T09:15:00",
+      "instructor": "Bob Johnson",
+      "description": "High intensity interval training.",
+      "render_config": {
+        "text_color": "white",
+        "background_color": "#FBC02D",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Evening Stretch",
+      "start": "2025-08-04T18:00:00",
+      "end": "2025-08-04T19:00:00",
+      "instructor": "Eva Green",
+      "description": "Relaxing stretch to end your Monday.",
+      "render_config": {
+        "text_color": "black",
+        "background_color": "#B2DFDB",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Advanced Yoga",
+      "start": "2025-08-15T18:00:00",
+      "end": "2025-08-15T19:00:00",
+      "instructor": "Jane Doe",
+      "description": "Advanced yoga techniques for experienced practitioners.",
+      "render_config": {
+        "text_color": "red",
+        "background_color": "#9B34AF",
+        "font_size": 12
+      }
+    }
+  ]
+}

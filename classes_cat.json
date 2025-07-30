@@ -1,11 +1,11 @@
 {
   "fitness_classes": [
     {
-      "name": "Morning Yoga",
+      "name": "Ioga Matinal",
       "start": "2025-07-28T07:00:00",
       "end": "2025-07-28T08:00:00",
       "instructor": "Alice Smith",
-      "description": "Start your week with gentle yoga.",
+      "description": "Comença la setmana amb ioga suau.",
       "render_config": {
         "text_color": "white",
         "background_color": "#388E3C",
@@ -13,11 +13,11 @@
       }
     },
     {
-      "name": "HIIT",
+      "name": "Entrenament HIIT",
       "start": "2025-07-28T08:30:00",
       "end": "2025-07-28T09:15:00",
       "instructor": "Bob Johnson",
-      "description": "High intensity interval training.",
+      "description": "Entrenament d'intervals d'alta intensitat.",
       "render_config": {
         "text_color": "white",
         "background_color": "#FBC02D",
@@ -25,11 +25,11 @@
       }
     },
     {
-      "name": "Evening Stretch",
+      "name": "Estiraments Vespertins",
       "start": "2025-07-28T18:00:00",
       "end": "2025-07-28T19:00:00",
       "instructor": "Eva Green",
-      "description": "Relaxing stretch to end Monday.",
+      "description": "Estiraments relaxants per acabar el dilluns.",
       "render_config": {
         "text_color": "black",
         "background_color": "#B2DFDB",
@@ -37,11 +37,11 @@
       }
     },
     {
-      "name": "Cardio Blast",
+      "name": "Explosió Cardio",
       "start": "2025-07-29T09:00:00",
       "end": "2025-07-29T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Cardio workout for all levels.",
+      "description": "Exercici cardiovascular per a tots els nivells.",
       "render_config": {
         "text_color": "white",
         "background_color": "#D32F2F",
@@ -49,11 +49,11 @@
       }
     },
     {
-      "name": "Core Strength",
+      "name": "Enfortiment del Core",
       "start": "2025-07-29T10:30:00",
       "end": "2025-07-29T11:15:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen your core muscles.",
+      "description": "Enforteix els músculs centrals.",
       "render_config": {
         "text_color": "black",
         "background_color": "#FFD54F",
@@ -65,7 +65,7 @@
       "start": "2025-07-29T18:00:00",
       "end": "2025-07-29T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Dance your way to fitness.",
+      "description": "Balla per posar-te en forma.",
       "render_config": {
         "text_color": "white",
         "background_color": "#F06292",
@@ -73,11 +73,11 @@
       }
     },
     {
-      "name": "Spin",
+      "name": "Spinning",
       "start": "2025-07-30T08:00:00",
       "end": "2025-07-30T09:00:00",
       "instructor": "Eva Green",
-      "description": "Morning spin class.",
+      "description": "Classe de spinning matinal.",
       "render_config": {
         "text_color": "white",
         "background_color": "#8E24AA",
@@ -89,7 +89,7 @@
       "start": "2025-07-30T09:30:00",
       "end": "2025-07-30T10:30:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen and tone with Pilates.",
+      "description": "Enforteix i tonifica amb Pilates.",
       "render_config": {
         "text_color": "black",
         "background_color": "#64B5F6",
@@ -97,11 +97,11 @@
       }
     },
     {
-      "name": "Boxing Basics",
+      "name": "Boxa Bàsica",
       "start": "2025-07-30T18:00:00",
       "end": "2025-07-30T19:00:00",
       "instructor": "Bob Johnson",
-      "description": "Learn boxing fundamentals.",
+      "description": "Aprèn els fonaments de la boxa.",
       "render_config": {
         "text_color": "white",
         "background_color": "#212121",
@@ -109,11 +109,11 @@
       }
     },
     {
-      "name": "Yoga",
+      "name": "Ioga",
       "start": "2025-07-31T07:30:00",
       "end": "2025-07-31T08:30:00",
       "instructor": "Alice Smith",
-      "description": "Midweek yoga flow.",
+      "description": "Ioga fluid a mitja setmana.",
       "render_config": {
         "text_color": "white",
         "background_color": "#43A047",
@@ -121,11 +121,11 @@
       }
     },
     {
-      "name": "Strength Training",
+      "name": "Entrenament de Força",
       "start": "2025-07-31T09:00:00",
       "end": "2025-07-31T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Build muscle and strength.",
+      "description": "Desenvolupa múscul i força.",
       "render_config": {
         "text_color": "white",
         "background_color": "#FFA726",
@@ -133,11 +133,11 @@
       }
     },
     {
-      "name": "Dance Fitness",
+      "name": "Fitness de Ball",
       "start": "2025-07-31T18:30:00",
       "end": "2025-07-31T19:30:00",
       "instructor": "Eva Green",
-      "description": "Fun dance workout.",
+      "description": "Entrenament de ball divertit.",
       "render_config": {
         "text_color": "black",
         "background_color": "#E1BEE7",
@@ -149,7 +149,7 @@
       "start": "2025-08-01T09:00:00",
       "end": "2025-08-01T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Morning Pilates.",
+      "description": "Pilates matinal.",
       "render_config": {
         "text_color": "black",
         "background_color": "#64B5F6",
@@ -157,11 +157,11 @@
       }
     },
     {
-      "name": "Functional Training",
+      "name": "Entrenament Funcional",
       "start": "2025-08-01T10:30:00",
       "end": "2025-08-01T11:15:00",
       "instructor": "Bob Johnson",
-      "description": "Improve everyday movement.",
+      "description": "Millora el moviment quotidià.",
       "render_config": {
         "text_color": "white",
         "background_color": "#388E3C",
@@ -169,11 +169,11 @@
       }
     },
     {
-      "name": "Evening Yoga",
+      "name": "Ioga Vespertí",
       "start": "2025-08-01T18:00:00",
       "end": "2025-08-01T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Relaxing yoga to end the week.",
+      "description": "Ioga relaxant per acabar la setmana.",
       "render_config": {
         "text_color": "white",
         "background_color": "#43A047",
@@ -181,11 +181,11 @@
       }
     },
     {
-      "name": "Yoga",
+      "name": "Ioga",
       "start": "2025-08-02T08:00:00",
       "end": "2025-08-02T09:00:00",
       "instructor": "Alice Smith",
-      "description": "Saturday morning yoga.",
+      "description": "Ioga matinal de dissabte.",
       "render_config": {
         "text_color": "white",
         "background_color": "#388E3C",
@@ -197,7 +197,7 @@
       "start": "2025-08-02T09:30:00",
       "end": "2025-08-02T10:30:00",
       "instructor": "Bob Johnson",
-      "description": "Outdoor bootcamp session.",
+      "description": "Sessió de bootcamp a l'aire lliure.",
       "render_config": {
         "text_color": "white",
         "background_color": "#D32F2F",
@@ -205,11 +205,11 @@
       }
     },
     {
-      "name": "Stretch & Mobility",
+      "name": "Estiraments i Mobilitat",
       "start": "2025-08-02T11:00:00",
       "end": "2025-08-02T12:00:00",
       "instructor": "Eva Green",
-      "description": "Improve flexibility and mobility.",
+      "description": "Millora la flexibilitat i la mobilitat.",
       "render_config": {
         "text_color": "black",
         "background_color": "#B2DFDB",
@@ -221,7 +221,7 @@
       "start": "2025-08-03T09:00:00",
       "end": "2025-08-03T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Sunday Pilates.",
+      "description": "Pilates dominical.",
       "render_config": {
         "text_color": "black",
         "background_color": "#1E88E5",
@@ -229,11 +229,11 @@
       }
     },
     {
-      "name": "Family Fitness",
+      "name": "Fitness Familiar",
       "start": "2025-08-03T10:30:00",
       "end": "2025-08-03T11:15:00",
       "instructor": "Alice Smith",
-      "description": "Fun workout for all ages.",
+      "description": "Exercici divertit per a totes les edats.",
       "render_config": {
         "text_color": "white",
         "background_color": "#FBC02D",
@@ -241,11 +241,11 @@
       }
     },
     {
-      "name": "Meditation",
+      "name": "Meditació",
       "start": "2025-08-03T18:00:00",
       "end": "2025-08-03T18:45:00",
       "instructor": "Eva Green",
-      "description": "Guided meditation session.",
+      "description": "Sessió guiada de meditació.",
       "render_config": {
         "text_color": "black",
         "background_color": "#E1BEE7",
@@ -253,11 +253,11 @@
       }
     },
     {
-      "name": "Morning Yoga",
+      "name": "Ioga Matinal",
       "start": "2025-08-04T07:00:00",
       "end": "2025-08-04T08:00:00",
       "instructor": "Alice Smith",
-      "description": "Start your week with gentle yoga.",
+      "description": "Comença la setmana amb ioga suau.",
       "render_config": {
         "text_color": "white",
         "background_color": "#388E3C",
@@ -265,11 +265,11 @@
       }
     },
     {
-      "name": "HIIT",
+      "name": "Entrenament HIIT",
       "start": "2025-08-04T08:30:00",
       "end": "2025-08-04T09:15:00",
       "instructor": "Bob Johnson",
-      "description": "High intensity interval training.",
+      "description": "Entrenament d'intervals d'alta intensitat.",
       "render_config": {
         "text_color": "white",
         "background_color": "#FBC02D",
@@ -277,11 +277,11 @@
       }
     },
     {
-      "name": "Evening Stretch",
+      "name": "Estiraments Vespertins",
       "start": "2025-08-04T18:00:00",
       "end": "2025-08-04T19:00:00",
       "instructor": "Eva Green",
-      "description": "Relaxing stretch to end Monday.",
+      "description": "Estiraments relaxants per acabar el dilluns.",
       "render_config": {
         "text_color": "black",
         "background_color": "#B2DFDB",
@@ -289,11 +289,11 @@
       }
     },
     {
-      "name": "Advanced Yoga",
+      "name": "Ioga Avançat",
       "start": "2025-08-15T18:00:00",
       "end": "2025-08-15T19:00:00",
       "instructor": "Jane Doe",
-      "description": "Advanced yoga techniques for experienced practitioners.",
+      "description": "Tècniques avançades de ioga per a practicants experimentats.",
       "render_config": {
         "text_color": "red",
         "background_color": "#9B34AF",

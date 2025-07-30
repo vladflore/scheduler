@@ -5,6 +5,7 @@ from pyscript import display
 from data import FitnessClass
 from pyodide.ffi import create_proxy
 from data import load_classes_from_file
+from config import translations, LANGUAGE, WHATSAPP_NUMBER
 
 
 def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) -> str:
@@ -39,21 +40,23 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
     html = []
 
     html.append('<div class="schedule-grid">')
-    html.append('<div class="schedule-header">Time / Date</div>')
+    html.append(
+        f'<div class="schedule-header">{translations[LANGUAGE]["time"]} / {translations[LANGUAGE]["date"]}</div>'
+    )
     for day in days:
         week_day = day.strftime("%A")
         date_num = day.strftime("%d")
         if day == highlighted_date:
             html.append(
                 f'<div class="schedule-header">'
-                f"{week_day}<br>"
+                f"{translations[LANGUAGE]['week_days'][week_day.lower()]}<br>"
                 f'<span class="schedule-today">{date_num}</span>'
                 f"</div>"
             )
         else:
             html.append(
                 f'<div class="schedule-header">'
-                f"{week_day}<br>"
+                f"{translations[LANGUAGE]['week_days'][week_day.lower()]}<br>"
                 f'<span style="font-size: 1.5em; font-weight: bold;">{date_num}</span>'
                 f"</div>"
             )
@@ -66,18 +69,21 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
             fitness_class: FitnessClass | None = class_lookup.get((day, interval))
             if fitness_class:
                 config = fitness_class.render_config
-                whatsapp_number = "+34613429288"
-                message = (
-                    f"Hi, I would like to book the class '{fitness_class.name}' with {fitness_class.instructor} "
-                    f"on {day.strftime('%A, %d %B %Y')} at {start_str}."
+                whatsapp_number = WHATSAPP_NUMBER
+                message_template: str = translations[LANGUAGE]["whatsapp_message"]
+                message = message_template.format(
+                    class_name=fitness_class.name,
+                    instructor=fitness_class.instructor,
+                    date=day.strftime("%A, %d %B %Y"),
+                    time=start_str,
                 )
                 whatsapp_url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
                 html.append(
                     f'<div class="schedule-cell" style="color:{config.text_color}; background:{config.background_color};">'
                     f"<strong>{fitness_class.name}</strong><br>"
-                    f"Instructor: {fitness_class.instructor}<br>"
+                    f"{translations[LANGUAGE]['instructor']}: {fitness_class.instructor}<br>"
                     f'<a class="whatsapp-link" href="{whatsapp_url}" target="_blank">'
-                    f"Book via WhatsApp"
+                    f"{translations[LANGUAGE]['book_via_whatsapp']}"
                     f"</a>"
                     "</div>"
                 )
@@ -90,7 +96,7 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
 def print_schedule(event): ...
 
 
-classes = load_classes_from_file()
+classes = load_classes_from_file(language=LANGUAGE)
 
 if classes:
     min_date = min(cls.start.date() for cls in classes)
@@ -133,3 +139,6 @@ def on_date_change(evt):
 
 
 pydom["#schedule-date"][0]._js.addEventListener("change", create_proxy(on_date_change))
+pydom["#schedule-date-label"][0]._js.innerHTML = translations[LANGUAGE][
+    "schedule_date_label"
+]

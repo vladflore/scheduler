@@ -42,24 +42,21 @@
     <div id="container" class="p-3 d-none container-fluid responsive-bg">
       <div class="row justify-content-center">
         <div class="col-12 d-flex align-items-center mb-3">
-          <label for="schedule-date" class="form-label mb-0 me-2"
-            >Go to date</label
-          >
+          <label id="schedule-date-label" for="schedule-date" class="form-label mb-0 me-2"></label>
           <input
             id="schedule-date"
             type="date"
             class="form-control ms-2"
             style="max-width: 200px"
-            title="Go to date"
           />
           <div class="flex-grow-1"></div>
-          <button
+            <button
             class="btn btn-outline-red ms-2"
             title="Download PDF"
             py-click="print_schedule"
-          >
-            <i class="bi bi-printer fs-4"></i>
-          </button>
+            >
+            <i class="bi bi-file-earmark-pdf fs-4"></i>
+            </button>
         </div>
         <div id="schedule" class="col-12"></div>
       </div>
