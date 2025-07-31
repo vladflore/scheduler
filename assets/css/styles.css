@@ -51,8 +51,6 @@ body {
   justify-content: center;
 }
 
-/* Start Classes related styling */
-
 .schedule-grid {
   display: grid;
   grid-template-columns: 120px repeat(7, 1fr);
@@ -128,4 +126,3 @@ body {
   text-decoration: none;
   font-size: 1em;
 }
-/* End Classes related styling */
