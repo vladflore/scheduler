@@ -41,14 +41,12 @@ body {
 }
 
 .responsive-bg {
-  background: url("../images/schedule_background.jpg") center center / cover
-    no-repeat;
-  background-color: rgba(255, 255, 255, 0.7);
-  background-blend-mode: lighten;
+  background: linear-gradient(135deg, rgba(241, 41, 41, 0.5) 0%, rgba(255, 179, 71, 0.5) 100%);
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 24px;
 }
 
 .schedule-grid {
