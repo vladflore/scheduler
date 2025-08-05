@@ -30,18 +30,22 @@ body {
 }
 
 .btn-outline-red {
-  color: #f12929;
-  border: 1px solid #f12929;
+  color: #ba945e;
+  border: 1px solid #ba945e;
   background-color: transparent;
 }
 
 .btn-outline-red:hover {
-  background-color: #f12929;
+  background-color: #ba945e;
   color: #fff;
 }
 
 .responsive-bg {
-  background: linear-gradient(135deg, rgba(241, 41, 41, 0.5) 0%, rgba(255, 179, 71, 0.5) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(153, 94, 10, 0.7) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -71,7 +75,7 @@ body {
   align-items: center;
 }
 .schedule-today {
-  background: rgba(241, 41, 41, 0.3) !important;
+  background: rgb(186, 148, 94, 0.3) !important;
   border-radius: 50%;
   display: inline-flex;
   align-items: center;
@@ -81,21 +85,21 @@ body {
   font-size: 1.5em;
   font-weight: bold;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 0 0 rgba(241, 41, 41, 0.7);
+  box-shadow: 0 0 0 0 rgb(186, 148, 94, 0.7);
 }
 
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(241, 41, 41, 0.7);
+    box-shadow: 0 0 0 0 rgba(186, 148, 94, 0.7);
   }
   50% {
     transform: scale(1.05);
-    box-shadow: 0 0 0 8px rgba(241, 41, 41, 0);
+    box-shadow: 0 0 0 8px rgba(186, 148, 94, 0);
   }
   100% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(241, 41, 41, 0);
+    box-shadow: 0 0 0 0 rgba(186, 148, 94, 0);
   }
 }
 .schedule-cell {
