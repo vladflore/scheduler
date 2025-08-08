@@ -29,6 +29,7 @@
       });
       loading.showModal();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
   <body>
@@ -66,5 +67,154 @@
       </div>
     </div>
     <script type="py" src="./main.py" config="./pyscript.toml"></script>
+
+    <a
+      href="#"
+      id="info-btn"
+      style="
+        position: fixed;
+        bottom: 86px;
+        left: 20px;
+        z-index: 9999;
+        background-color: #ba945e;
+        color: white;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-size: 2rem;
+      "
+      title="Information"
+    >
+      <i class="bi bi-info-lg"></i>
+    </a>
+
+    <a
+      href="https://wa.me/34613429288"
+      target="_blank"
+      style="
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+        background-color: #25d366;
+        color: white;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        font-size: 2rem;
+      "
+      title="Chat on WhatsApp"
+    >
+      <i class="bi bi-whatsapp"></i>
+    </a>
+
+    <div
+      class="modal fade"
+      id="infoModal"
+      tabindex="-1"
+      aria-labelledby="infoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="infoModalLabel">Information</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Interested in
+              <strong class="">integrating this application</strong>
+              into your website? Get in touch via the
+              <strong class="text-success">WhatsApp button</strong> below. The
+              current version contains
+              <strong class="text-warning">sample data</strong> and a
+              <strong class="text-warning">standard design</strong>, but it can
+              be fully tailored to reflect your
+              <strong class="">brand identity</strong> and meet your
+              <strong class="">specific requirements</strong>.
+            </p>
+
+            <h6 class="mt-4 mb-3 fw-bold">
+              Features and Customisation Options
+            </h6>
+            <ul class="list-unstyled">
+              <li class="mb-2 d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span
+                  ><strong class="">Include your own classes</strong> with
+                  tailored information and visual styling.</span
+                >
+              </li>
+              <li class="mb-2 d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span
+                  ><strong class="">Enable direct class bookings</strong> via
+                  WhatsApp.</span
+                >
+              </li>
+              <li class="mb-2 d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span
+                  ><strong class="">Provide the weekly schedule</strong> as a
+                  downloadable PDF.</span
+                >
+              </li>
+              <li class="mb-2 d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span
+                  ><strong class="">Offer multilingual support</strong>
+                  (English, Spanish, and Catalan).</span
+                >
+              </li>
+              <li class="mb-2 d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span><strong class="">Add your business logo</strong></span>
+              </li>
+              <li class="d-flex">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <span
+                  ><strong class="">Customise the background gradient</strong>
+                  to match your website's style.</span
+                >
+              </li>
+            </ul>
+
+            <p class="mt-4 mb-0 small text-muted">
+              Let me know which features you’d like to include, and I will adapt
+              the app to meet your
+              <strong class="">exact needs</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("info-btn")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          var infoModal = new bootstrap.Modal(
+            document.getElementById("infoModal")
+          );
+          infoModal.show();
+        });
+    </script>
   </body>
 </html>
