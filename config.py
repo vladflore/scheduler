@@ -2,6 +2,8 @@ LANGUAGE = "es"
 
 WHATSAPP_NUMBER = "+34613429288"
 
+BOOK_VIA_WHATSAPP = False
+
 translations: dict[str, dict[str, str | dict[str, str]]] = {
     "es": {
         "instructor": "Instructor",

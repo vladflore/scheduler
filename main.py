@@ -3,7 +3,7 @@ from collections import defaultdict
 from data import FitnessClass
 from pyodide.ffi import create_proxy
 from data import load_classes_from_file
-from config import translations, LANGUAGE, WHATSAPP_NUMBER
+from config import translations, LANGUAGE, WHATSAPP_NUMBER, BOOK_VIA_WHATSAPP
 import io
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
@@ -83,13 +83,26 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
                     time=start_str,
                 )
                 whatsapp_url = f"https://wa.me/{whatsapp_number}?text={message.replace(' ', '%20')}"
+
+                if BOOK_VIA_WHATSAPP:
+                    book_via_whatsapp = (
+                        f'<a class="whatsapp-link" href="{whatsapp_url}" target="_blank">'
+                        f"{translations[LANGUAGE]['book_via_whatsapp']}"
+                        f"</a>"
+                    )
+                else:
+                    book_via_whatsapp = (
+                        f'<span style="color:gray; font-style:italic; cursor:not-allowed;" '
+                        f'title="Feature disabled.">'
+                        f"{translations[LANGUAGE]['book_via_whatsapp']}"
+                        f"</span>"
+                    )
+
                 html.append(
                     f'<div class="schedule-cell" style="color:{config.text_color}; background:{config.background_color};">'
                     f"<strong>{fitness_class.name}</strong><br>"
                     f"{translations[LANGUAGE]['instructor']}: {fitness_class.instructor}<br>"
-                    f'<a class="whatsapp-link" href="{whatsapp_url}" target="_blank">'
-                    f"{translations[LANGUAGE]['book_via_whatsapp']}"
-                    f"</a>"
+                    f"{book_via_whatsapp}<br>"
                     "</div>"
                 )
             else:
