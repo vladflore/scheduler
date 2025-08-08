@@ -19,6 +19,7 @@ translations: dict[str, dict[str, str | dict[str, str]]] = {
             "sunday": "Domingo",
         },
         "schedule_date_label": "Ir a la fecha",
+        "schedule_title": "Horario de Clases de Fitness",
     },
     "en": {
         "instructor": "Instructor",
@@ -36,6 +37,7 @@ translations: dict[str, dict[str, str | dict[str, str]]] = {
             "sunday": "Sunday",
         },
         "schedule_date_label": "Go to date",
+        "schedule_title": "Fitness Classes Schedule",
     },
     "cat": {
         "instructor": "Instructor",
@@ -53,5 +55,6 @@ translations: dict[str, dict[str, str | dict[str, str]]] = {
             "sunday": "Diumenge",
         },
         "schedule_date_label": "Anar a la data",
+        "schedule_title": "Horari de Classes de Fitness",
     },
 }

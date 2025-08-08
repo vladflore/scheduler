@@ -1,11 +1,16 @@
 from datetime import datetime, date, timedelta
 from collections import defaultdict
-from pyweb import pydom
-from pyscript import display
 from data import FitnessClass
 from pyodide.ffi import create_proxy
 from data import load_classes_from_file
 from config import translations, LANGUAGE, WHATSAPP_NUMBER
+import io
+from fpdf import FPDF
+from fpdf.enums import XPos, YPos
+from js import Uint8Array, File, URL, document
+from pyodide.ffi import create_proxy
+from pyscript import document, display
+from pyweb import pydom
 
 
 def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) -> str:
@@ -93,7 +98,192 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
     return "\n".join(html)
 
 
-def print_schedule(event): ...
+def create_pdf(classes: list[FitnessClass]) -> FPDF:
+    pdf = FPDF(orientation="L", unit="mm", format="A4")
+    pdf.add_page()
+    pdf.set_auto_page_break(auto=True, margin=10)
+
+    page_width = 297  # A4 landscape width in mm
+    page_height = 210  # A4 landscape height in mm
+    steps = 100
+    for i in range(steps):
+        r1, g1, b1 = (
+            int(153 * 0.7 + 255 * 0.3),
+            int(94 * 0.7 + 255 * 0.3),
+            int(10 * 0.7 + 255 * 0.3),
+        )
+        r2, g2, b2 = (255, 255, 255)
+        ratio = i / steps
+        r = int(r1 + (r2 - r1) * ratio)
+        g = int(g1 + (g2 - g1) * ratio)
+        b = int(b1 + (b2 - b1) * ratio)
+        y = (page_height / steps) * i
+        pdf.set_fill_color(r, g, b)
+        pdf.rect(0, y, page_width, page_height / steps, "F")
+
+    pdf.set_y(4)
+    pdf.set_font("Helvetica", "B", 18)
+    title = translations[LANGUAGE].get("schedule_title", "Classes Schedule")
+    pdf.set_text_color(40, 40, 80)
+    pdf.cell(0, 12, title, align="C", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
+    pdf.ln(4)
+
+    pdf.set_font("Helvetica", "B", 14)
+
+    classes_by_day = defaultdict(list)
+    for cls in classes:
+        day = cls.start.date()
+        classes_by_day[day].append(cls)
+    days = sorted(classes_by_day.keys())
+    if days:
+        if len(days) < 7:
+            last_day = days[-1]
+            week_start_day = last_day - timedelta(days=last_day.weekday())
+            days = [week_start_day + timedelta(days=i) for i in range(7)]
+    else:
+        week_start_day = date.today() - timedelta(days=date.today().weekday())
+        days = [week_start_day + timedelta(days=i) for i in range(7)]
+    days = sorted(days)
+
+    time_intervals = set()
+    for cls in classes:
+        time_intervals.add((cls.start.time(), cls.end.time()))
+    time_intervals = sorted(time_intervals)
+
+    class_lookup = {}
+    for day in days:
+        for cls in classes_by_day[day]:
+            interval = (cls.start.time(), cls.end.time())
+            class_lookup[(day, interval)] = cls
+
+    cell_height = 15
+    cell_width_time = 35
+    cell_width_day = (
+        277 - cell_width_time
+    ) / 7  # 277mm is printable width in landscape A4
+
+    pdf.set_fill_color(220, 220, 220)
+    pdf.set_text_color(0, 0, 0)
+    pdf.set_font("Helvetica", "B", 12)
+    pdf.cell(
+        cell_width_time,
+        cell_height,
+        f"{translations[LANGUAGE]['time']} / {translations[LANGUAGE]['date']}",
+        border=1,
+        align="C",
+        fill=True,
+    )
+    for day in days:
+        week_day = day.strftime("%A")
+        date_num = day.strftime("%d")
+        pdf.set_font("Helvetica", "B", 11)
+        week_label = translations[LANGUAGE]["week_days"][week_day.lower()]
+        date_label = date_num
+        label = f"{week_label}\n{date_label}"
+        x = pdf.get_x()
+        y = pdf.get_y()
+        pdf.set_fill_color(220, 220, 220)
+        pdf.multi_cell(
+            cell_width_day, cell_height / 2, label, border=1, align="C", fill=True
+        )
+        pdf.set_xy(x + cell_width_day, y)
+    pdf.ln(cell_height)
+
+    for interval in time_intervals:
+        start_str = interval[0].strftime("%H:%M")
+        end_str = interval[1].strftime("%H:%M")
+        pdf.set_font("Helvetica", "", 11)
+        pdf.set_text_color(0, 0, 0)
+        pdf.set_fill_color(255, 255, 255)
+        pdf.cell(
+            cell_width_time,
+            cell_height,
+            f"{start_str}-{end_str}",
+            border=1,
+            align="C",
+            fill=True,
+        )
+        for day in days:
+            fitness_class = class_lookup.get((day, interval))
+            if fitness_class:
+                config = fitness_class.render_config
+                font_family = (
+                    config.font_family
+                    if hasattr(config, "font_family")
+                    else "Helvetica"
+                )
+                font_style = config.font_style if hasattr(config, "font_style") else ""
+                try:
+                    hex_color = config.text_color.lstrip("#")
+                    r, g, b = tuple(int(hex_color[i : i + 2], 16) for i in (0, 2, 4))
+                    pdf.set_text_color(r, g, b)
+                except Exception:
+                    pdf.set_text_color(0, 0, 0)
+                try:
+                    hex_bg = config.background_color.lstrip("#")
+                    br, bg, bb = tuple(int(hex_bg[i : i + 2], 16) for i in (0, 2, 4))
+                    pdf.set_fill_color(br, bg, bb)
+                except Exception:
+                    pdf.set_fill_color(255, 255, 255)
+                text = f"{fitness_class.name}"
+
+                font_size = 11
+                pdf.set_font(font_family, font_style, font_size)
+                text_width = pdf.get_string_width(text)
+                while text_width > (cell_width_day - 2) and font_size > 6:
+                    font_size -= 1
+                    pdf.set_font(font_family, font_style, font_size)
+                    text_width = pdf.get_string_width(text)
+                pdf.cell(
+                    cell_width_day,
+                    cell_height,
+                    text,
+                    border=1,
+                    align="C",
+                    fill=True,
+                )
+            else:
+                pdf.set_font("Helvetica", "", 11)
+                pdf.set_text_color(0, 0, 0)
+                pdf.set_fill_color(255, 255, 255)
+                pdf.cell(cell_width_day, cell_height, "", border=1, fill=True)
+        pdf.ln(cell_height)
+
+        logo_path = "logo-nobg.png"
+        logo_diameter = 15
+        x_logo = 0
+        y_logo = page_height - logo_diameter
+        pdf.image(
+            logo_path,
+            x=x_logo,
+            y=y_logo,
+            w=logo_diameter,
+            h=logo_diameter,
+            type="",
+            link="",
+        )
+
+    return pdf
+
+
+def download_pdf(event):
+    pdf = create_pdf(filtered_classes)
+    encoded_data = pdf.output()
+    my_stream = io.BytesIO(encoded_data)
+
+    js_array = Uint8Array.new(len(encoded_data))
+    js_array.assign(my_stream.getbuffer())
+
+    file = File.new([js_array], "unused_file_name.pdf", {type: "application/pdf"})
+    url = URL.createObjectURL(file)
+
+    hidden_link = document.createElement("a")
+    hidden_link.setAttribute(
+        "download",
+        f"plan_{current_week_start_date.strftime('%d.%m.%Y')}_{current_week_end_date.strftime('%d.%m.%Y')}_{LANGUAGE}.pdf",
+    )
+    hidden_link.setAttribute("href", url)
+    hidden_link.click()
 
 
 classes = load_classes_from_file(language=LANGUAGE)
@@ -124,14 +314,17 @@ pydom["#schedule-date"][0]._js.max = max_date.strftime("%Y-%m-%d")
 
 
 def on_date_change(evt):
+    global current_week_start_date, current_week_end_date, filtered_classes
     value = evt.target.value
     if not value:
         return
     new_date = datetime.strptime(value, "%Y-%m-%d").date()
-    week_start_date = new_date - timedelta(days=new_date.weekday())
-    week_end_date = week_start_date + timedelta(days=6)
+    current_week_start_date = new_date - timedelta(days=new_date.weekday())
+    current_week_end_date = current_week_start_date + timedelta(days=6)
     filtered_classes = [
-        cls for cls in classes if week_start_date <= cls.start.date() <= week_end_date
+        cls
+        for cls in classes
+        if current_week_start_date <= cls.start.date() <= current_week_end_date
     ]
     pydom["#schedule"][0]._js.innerHTML = render_fitness_classes(
         filtered_classes, new_date
