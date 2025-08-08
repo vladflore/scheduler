@@ -1,302 +1,434 @@
 {
   "fitness_classes": [
     {
-      "name": "Ioga Matinal",
-      "start": "2025-07-28T07:00:00",
-      "end": "2025-07-28T08:00:00",
-      "instructor": "Alice Smith",
-      "description": "Comença la setmana amb ioga suau.",
-      "render_config": {
-        "text_color": "white",
-        "background_color": "#388E3C",
-        "font_size": 12
-      }
-    },
-    {
-      "name": "Entrenament HIIT",
-      "start": "2025-07-28T08:30:00",
-      "end": "2025-07-28T09:15:00",
-      "instructor": "Bob Johnson",
-      "description": "Entrenament d'intervals d'alta intensitat.",
-      "render_config": {
-        "text_color": "white",
-        "background_color": "#FBC02D",
-        "font_size": 12
-      }
-    },
-    {
-      "name": "Estiraments Vespertins",
-      "start": "2025-07-28T18:00:00",
-      "end": "2025-07-28T19:00:00",
-      "instructor": "Eva Green",
-      "description": "Estiraments relaxants per acabar el dilluns.",
-      "render_config": {
-        "text_color": "black",
-        "background_color": "#B2DFDB",
-        "font_size": 12
-      }
-    },
-    {
-      "name": "Explosió Cardio",
-      "start": "2025-07-29T09:00:00",
-      "end": "2025-07-29T10:00:00",
+      "name": "Explosió de Cardio",
+      "start": "2025-08-05T09:00:00",
+      "end": "2025-08-05T10:00:00",
       "instructor": "Bob Johnson",
       "description": "Exercici cardiovascular per a tots els nivells.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#D32F2F",
         "font_size": 12
       }
     },
     {
       "name": "Enfortiment del Core",
-      "start": "2025-07-29T10:30:00",
-      "end": "2025-07-29T11:15:00",
+      "start": "2025-08-05T10:30:00",
+      "end": "2025-08-05T11:15:00",
       "instructor": "Cathy Lee",
-      "description": "Enforteix els músculs centrals.",
+      "description": "Enforteix els teus músculs abdominals.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#FFD54F",
         "font_size": 12
       }
     },
     {
       "name": "Zumba",
-      "start": "2025-07-29T18:00:00",
-      "end": "2025-07-29T19:00:00",
+      "start": "2025-08-05T18:00:00",
+      "end": "2025-08-05T19:00:00",
       "instructor": "Alice Smith",
       "description": "Balla per posar-te en forma.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#F06292",
         "font_size": 12
       }
     },
     {
       "name": "Spinning",
-      "start": "2025-07-30T08:00:00",
-      "end": "2025-07-30T09:00:00",
+      "start": "2025-08-06T08:00:00",
+      "end": "2025-08-06T09:00:00",
       "instructor": "Eva Green",
-      "description": "Classe de spinning matinal.",
+      "description": "Classe de spinning al matí.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#8E24AA",
         "font_size": 12
       }
     },
     {
       "name": "Pilates",
-      "start": "2025-07-30T09:30:00",
-      "end": "2025-07-30T10:30:00",
+      "start": "2025-08-06T09:30:00",
+      "end": "2025-08-06T10:30:00",
       "instructor": "Cathy Lee",
       "description": "Enforteix i tonifica amb Pilates.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#64B5F6",
         "font_size": 12
       }
     },
     {
       "name": "Boxa Bàsica",
-      "start": "2025-07-30T18:00:00",
-      "end": "2025-07-30T19:00:00",
+      "start": "2025-08-06T18:00:00",
+      "end": "2025-08-06T19:00:00",
       "instructor": "Bob Johnson",
       "description": "Aprèn els fonaments de la boxa.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#212121",
         "font_size": 12
       }
     },
     {
       "name": "Ioga",
-      "start": "2025-07-31T07:30:00",
-      "end": "2025-07-31T08:30:00",
+      "start": "2025-08-07T07:30:00",
+      "end": "2025-08-07T08:30:00",
       "instructor": "Alice Smith",
-      "description": "Ioga fluid a mitja setmana.",
+      "description": "Ioga fluid per a mitja setmana.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#43A047",
         "font_size": 12
       }
     },
     {
       "name": "Entrenament de Força",
-      "start": "2025-07-31T09:00:00",
-      "end": "2025-07-31T10:00:00",
+      "start": "2025-08-07T09:00:00",
+      "end": "2025-08-07T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Desenvolupa múscul i força.",
+      "description": "Construeix múscul i força.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#FFA726",
         "font_size": 12
       }
     },
     {
-      "name": "Fitness de Ball",
-      "start": "2025-07-31T18:30:00",
-      "end": "2025-07-31T19:30:00",
+      "name": "Dansa Fitness",
+      "start": "2025-08-07T18:30:00",
+      "end": "2025-08-07T19:30:00",
       "instructor": "Eva Green",
-      "description": "Entrenament de ball divertit.",
+      "description": "Entrenament divertit de dansa.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#E1BEE7",
         "font_size": 12
       }
     },
     {
       "name": "Pilates",
-      "start": "2025-08-01T09:00:00",
-      "end": "2025-08-01T10:00:00",
+      "start": "2025-08-08T09:00:00",
+      "end": "2025-08-08T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Pilates matinal.",
+      "description": "Pilates al matí.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#64B5F6",
         "font_size": 12
       }
     },
     {
       "name": "Entrenament Funcional",
-      "start": "2025-08-01T10:30:00",
-      "end": "2025-08-01T11:15:00",
+      "start": "2025-08-08T10:30:00",
+      "end": "2025-08-08T11:15:00",
       "instructor": "Bob Johnson",
       "description": "Millora el moviment quotidià.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#388E3C",
         "font_size": 12
       }
     },
     {
-      "name": "Ioga Vespertí",
-      "start": "2025-08-01T18:00:00",
-      "end": "2025-08-01T19:00:00",
+      "name": "Ioga al Vespre",
+      "start": "2025-08-08T18:00:00",
+      "end": "2025-08-08T19:00:00",
       "instructor": "Alice Smith",
       "description": "Ioga relaxant per acabar la setmana.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#43A047",
         "font_size": 12
       }
     },
     {
       "name": "Ioga",
-      "start": "2025-08-02T08:00:00",
-      "end": "2025-08-02T09:00:00",
+      "start": "2025-08-09T08:00:00",
+      "end": "2025-08-09T09:00:00",
       "instructor": "Alice Smith",
-      "description": "Ioga matinal de dissabte.",
+      "description": "Ioga de dissabte al matí.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#388E3C",
         "font_size": 12
       }
     },
     {
       "name": "Bootcamp",
-      "start": "2025-08-02T09:30:00",
-      "end": "2025-08-02T10:30:00",
+      "start": "2025-08-09T09:30:00",
+      "end": "2025-08-09T10:30:00",
       "instructor": "Bob Johnson",
       "description": "Sessió de bootcamp a l'aire lliure.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#D32F2F",
         "font_size": 12
       }
     },
     {
       "name": "Estiraments i Mobilitat",
-      "start": "2025-08-02T11:00:00",
-      "end": "2025-08-02T12:00:00",
+      "start": "2025-08-09T11:00:00",
+      "end": "2025-08-09T12:00:00",
       "instructor": "Eva Green",
       "description": "Millora la flexibilitat i la mobilitat.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#B2DFDB",
         "font_size": 12
       }
     },
     {
       "name": "Pilates",
-      "start": "2025-08-03T09:00:00",
-      "end": "2025-08-03T10:00:00",
+      "start": "2025-08-10T09:00:00",
+      "end": "2025-08-10T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Pilates dominical.",
+      "description": "Pilates de diumenge.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#1E88E5",
         "font_size": 12
       }
     },
     {
-      "name": "Fitness Familiar",
-      "start": "2025-08-03T10:30:00",
-      "end": "2025-08-03T11:15:00",
+      "name": "Fitness en Família",
+      "start": "2025-08-10T10:30:00",
+      "end": "2025-08-10T11:15:00",
       "instructor": "Alice Smith",
       "description": "Exercici divertit per a totes les edats.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
         "background_color": "#FBC02D",
         "font_size": 12
       }
     },
     {
       "name": "Meditació",
-      "start": "2025-08-03T18:00:00",
-      "end": "2025-08-03T18:45:00",
+      "start": "2025-08-10T18:00:00",
+      "end": "2025-08-10T18:45:00",
       "instructor": "Eva Green",
       "description": "Sessió guiada de meditació.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#000000",
         "background_color": "#E1BEE7",
         "font_size": 12
       }
     },
     {
-      "name": "Ioga Matinal",
-      "start": "2025-08-04T07:00:00",
-      "end": "2025-08-04T08:00:00",
-      "instructor": "Alice Smith",
-      "description": "Comença la setmana amb ioga suau.",
+      "name": "Explosió de Cardio",
+      "start": "2025-08-12T09:00:00",
+      "end": "2025-08-12T10:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Exercici cardiovascular per a tots els nivells.",
       "render_config": {
-        "text_color": "white",
+        "text_color": "#FFFFFF",
+        "background_color": "#D32F2F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Enfortiment del Core",
+      "start": "2025-08-12T10:30:00",
+      "end": "2025-08-12T11:15:00",
+      "instructor": "Cathy Lee",
+      "description": "Enforteix els teus músculs abdominals.",
+      "render_config": {
+        "text_color": "#000000",
+        "background_color": "#FFD54F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Zumba",
+      "start": "2025-08-12T18:00:00",
+      "end": "2025-08-12T19:00:00",
+      "instructor": "Alice Smith",
+      "description": "Balla per posar-te en forma.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#F06292",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Spinning",
+      "start": "2025-08-13T08:00:00",
+      "end": "2025-08-13T09:00:00",
+      "instructor": "Eva Green",
+      "description": "Classe de spinning al matí.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#8E24AA",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Pilates",
+      "start": "2025-08-13T09:30:00",
+      "end": "2025-08-13T10:30:00",
+      "instructor": "Cathy Lee",
+      "description": "Enforteix i tonifica amb Pilates.",
+      "render_config": {
+        "text_color": "#000000",
+        "background_color": "#64B5F6",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Boxa Bàsica",
+      "start": "2025-08-13T18:00:00",
+      "end": "2025-08-13T19:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Aprèn els fonaments de la boxa.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#212121",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Ioga",
+      "start": "2025-08-14T07:30:00",
+      "end": "2025-08-14T08:30:00",
+      "instructor": "Alice Smith",
+      "description": "Ioga fluid per a mitja setmana.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#43A047",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Entrenament de Força",
+      "start": "2025-08-14T09:00:00",
+      "end": "2025-08-14T10:00:00",
+      "instructor": "Bob Johnson",
+      "description": "Construeix múscul i força.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#FFA726",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Dansa Fitness",
+      "start": "2025-08-14T18:30:00",
+      "end": "2025-08-14T19:30:00",
+      "instructor": "Eva Green",
+      "description": "Entrenament divertit de dansa.",
+      "render_config": {
+        "text_color": "#000000",
+        "background_color": "#E1BEE7",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Pilates",
+      "start": "2025-08-15T09:00:00",
+      "end": "2025-08-15T10:00:00",
+      "instructor": "Cathy Lee",
+      "description": "Pilates al matí.",
+      "render_config": {
+        "text_color": "#000000",
+        "background_color": "#64B5F6",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Entrenament Funcional",
+      "start": "2025-08-15T10:30:00",
+      "end": "2025-08-15T11:15:00",
+      "instructor": "Bob Johnson",
+      "description": "Millora el moviment quotidià.",
+      "render_config": {
+        "text_color": "#FFFFFF",
         "background_color": "#388E3C",
         "font_size": 12
       }
     },
     {
-      "name": "Entrenament HIIT",
-      "start": "2025-08-04T08:30:00",
-      "end": "2025-08-04T09:15:00",
-      "instructor": "Bob Johnson",
-      "description": "Entrenament d'intervals d'alta intensitat.",
+      "name": "Ioga al Vespre",
+      "start": "2025-08-15T18:00:00",
+      "end": "2025-08-15T19:00:00",
+      "instructor": "Alice Smith",
+      "description": "Ioga relaxant per acabar la setmana.",
       "render_config": {
-        "text_color": "white",
-        "background_color": "#FBC02D",
+        "text_color": "#FFFFFF",
+        "background_color": "#43A047",
         "font_size": 12
       }
     },
     {
-      "name": "Estiraments Vespertins",
-      "start": "2025-08-04T18:00:00",
-      "end": "2025-08-04T19:00:00",
-      "instructor": "Eva Green",
-      "description": "Estiraments relaxants per acabar el dilluns.",
+      "name": "Ioga",
+      "start": "2025-08-16T08:00:00",
+      "end": "2025-08-16T09:00:00",
+      "instructor": "Alice Smith",
+      "description": "Ioga de dissabte al matí.",
       "render_config": {
-        "text_color": "black",
+        "text_color": "#FFFFFF",
+        "background_color": "#388E3C",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Bootcamp",
+      "start": "2025-08-16T09:30:00",
+      "end": "2025-08-16T10:30:00",
+      "instructor": "Bob Johnson",
+      "description": "Sessió de bootcamp a l'aire lliure.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#D32F2F",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Estiraments i Mobilitat",
+      "start": "2025-08-16T11:00:00",
+      "end": "2025-08-16T12:00:00",
+      "instructor": "Eva Green",
+      "description": "Millora la flexibilitat i la mobilitat.",
+      "render_config": {
+        "text_color": "#000000",
         "background_color": "#B2DFDB",
         "font_size": 12
       }
     },
     {
-      "name": "Ioga Avançat",
-      "start": "2025-08-15T18:00:00",
-      "end": "2025-08-15T19:00:00",
-      "instructor": "Jane Doe",
-      "description": "Tècniques avançades de ioga per a practicants experimentats.",
+      "name": "Pilates",
+      "start": "2025-08-17T09:00:00",
+      "end": "2025-08-17T10:00:00",
+      "instructor": "Cathy Lee",
+      "description": "Pilates de diumenge.",
       "render_config": {
-        "text_color": "red",
-        "background_color": "#9B34AF",
+        "text_color": "#000000",
+        "background_color": "#1E88E5",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Fitness en Família",
+      "start": "2025-08-17T10:30:00",
+      "end": "2025-08-17T11:15:00",
+      "instructor": "Alice Smith",
+      "description": "Exercici divertit per a totes les edats.",
+      "render_config": {
+        "text_color": "#FFFFFF",
+        "background_color": "#FBC02D",
+        "font_size": 12
+      }
+    },
+    {
+      "name": "Meditació",
+      "start": "2025-08-17T18:00:00",
+      "end": "2025-08-17T18:45:00",
+      "instructor": "Eva Green",
+      "description": "Sessió guiada de meditació.",
+      "render_config": {
+        "text_color": "#000000",
+        "background_color": "#E1BEE7",
         "font_size": 12
       }
     }
