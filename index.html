@@ -42,7 +42,7 @@
     </dialog>
     <div id="container" class="p-3 d-none container-fluid responsive-bg">
       <div class="row justify-content-center">
-        <div class="col-12 d-flex align-items-center mb-3">
+        <div id="tools" class="col-12 d-flex align-items-center mb-3 d-none">
           <label
             id="schedule-date-label"
             for="schedule-date"
@@ -64,6 +64,11 @@
           </button>
         </div>
         <div id="schedule" class="col-12"></div>
+        <div id="spinner" class="d-flex justify-content-center align-items-center w-100" style="height: 120px; background: transparent;">
+          <div class="spinner-border text-secondary" style="width: 3rem; height: 3rem;" role="status" aria-label="Loading"></div>
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
       </div>
     </div>
     <script type="py" src="./main.py" config="./pyscript.toml"></script>
@@ -74,7 +79,7 @@
       style="
         position: fixed;
         bottom: 86px;
-        left: 20px;
+        right: 20px;
         z-index: 9999;
         background-color: #ba945e;
         color: white;
@@ -99,7 +104,7 @@
       style="
         position: fixed;
         bottom: 20px;
-        left: 20px;
+        right: 20px;
         z-index: 9999;
         background-color: #25d366;
         color: white;
@@ -136,71 +141,8 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body">
-            <p>
-              Interested in
-              <strong class="">integrating this application</strong>
-              into your website? Get in touch via the
-              <strong class="text-success">WhatsApp button</strong> below. The
-              current version contains
-              <strong class="text-warning">sample data</strong> and a
-              <strong class="text-warning">standard design</strong>, but it can
-              be fully tailored to reflect your
-              <strong class="">brand identity</strong> and meet your
-              <strong class="">specific requirements</strong>.
-            </p>
-
-            <h6 class="mt-4 mb-3 fw-bold">
-              Features and Customisation Options
-            </h6>
-            <ul class="list-unstyled">
-              <li class="mb-2 d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span
-                  ><strong class="">Include your own classes</strong> with
-                  tailored information and visual styling.</span
-                >
-              </li>
-              <li class="mb-2 d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span
-                  ><strong class="">Enable direct class bookings</strong> via
-                  WhatsApp.</span
-                >
-              </li>
-              <li class="mb-2 d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span
-                  ><strong class="">Provide the weekly schedule</strong> as a
-                  downloadable PDF.</span
-                >
-              </li>
-              <li class="mb-2 d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span
-                  ><strong class="">Offer multilingual support</strong>
-                  (English, Spanish, and Catalan).</span
-                >
-              </li>
-              <li class="mb-2 d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span><strong class="">Add your business logo</strong></span>
-              </li>
-              <li class="d-flex">
-                <i class="bi bi-check-circle-fill text-success me-2"></i>
-                <span
-                  ><strong class="">Customise the background gradient</strong>
-                  to match your website's style.</span
-                >
-              </li>
-            </ul>
-
-            <p class="mt-4 mb-0 small text-muted">
-              Let me know which features you’d like to include, and I will adapt
-              the app to meet your
-              <strong class="">exact needs</strong>.
-            </p>
-          </div>
+          <div class="modal-body"></div>
+          tbd
         </div>
       </div>
     </div>

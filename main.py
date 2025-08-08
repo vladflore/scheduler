@@ -318,12 +318,22 @@ filtered_classes = [
     if current_week_start_date <= cls.start.date() <= current_week_end_date
 ]
 
-pydom["#schedule"][0]._js.innerHTML = render_fitness_classes(
-    filtered_classes, date.today()
-)
-pydom["#schedule-date"][0]._js.value = datetime.now().strftime("%Y-%m-%d")
-pydom["#schedule-date"][0]._js.min = min_date.strftime("%Y-%m-%d")
-pydom["#schedule-date"][0]._js.max = max_date.strftime("%Y-%m-%d")
+schedule_div = pydom["#schedule"][0]
+schedule_div._js.innerHTML = render_fitness_classes(filtered_classes, date.today())
+schedule_div._js.classList.remove("d-none")
+
+# Hide the loading
+pydom["#spinner"][0]._js.classList.add("d-none")
+
+schedule_date_input = pydom["#schedule-date"][0]
+schedule_date_input._js.value = datetime.now().strftime("%Y-%m-%d")
+schedule_date_input._js.min = min_date.strftime("%Y-%m-%d")
+schedule_date_input._js.max = max_date.strftime("%Y-%m-%d")
+
+schedule_date_label = pydom["#schedule-date-label"][0]
+schedule_date_label._js.innerHTML = translations[LANGUAGE]["schedule_date_label"]
+
+pydom["#tools"][0]._js.classList.remove("d-none")
 
 
 def on_date_change(evt):
@@ -344,7 +354,4 @@ def on_date_change(evt):
     )
 
 
-pydom["#schedule-date"][0]._js.addEventListener("change", create_proxy(on_date_change))
-pydom["#schedule-date-label"][0]._js.innerHTML = translations[LANGUAGE][
-    "schedule_date_label"
-]
+schedule_date_input._js.addEventListener("change", create_proxy(on_date_change))
