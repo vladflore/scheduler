@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from datetime import datetime, date
 import json
+from datetime import timedelta
 
 
 @dataclass
@@ -23,6 +24,196 @@ class FitnessClass:
 
 
 CLASSES_INPUT_FILE = "classes_{lang}.json"
+
+today = date.today()
+start_of_week = today - timedelta(days=today.weekday())
+
+dummy_classes = [
+    FitnessClass(
+        name="Yoga Flow",
+        start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=9),
+        end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=10),
+        instructor="Alice Smith",
+        description="A gentle yoga class to start your week.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#FFFFFF",
+            background_color="#800080",
+            font_size=14,  # white, purple
+        ),
+    ),
+    FitnessClass(
+        name="Power Yoga",
+        start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=17),
+        end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=18),
+        instructor="Alice Smith",
+        description="Dynamic yoga for strength and flexibility.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#FFFFFF",
+            background_color="#4B0082",
+            font_size=13,
+        ),
+    ),
+    FitnessClass(
+        name="HIIT Blast",
+        start=datetime.combine(
+            start_of_week + timedelta(days=1), datetime.min.time()
+        ).replace(hour=18),
+        end=datetime.combine(
+            start_of_week + timedelta(days=1), datetime.min.time()
+        ).replace(hour=19),
+        instructor="Bob Johnson",
+        description="High intensity interval training for all levels.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#FFFF00",
+            font_size=12,  # black, yellow
+        ),
+    ),
+    FitnessClass(
+        name="Morning HIIT",
+        start=datetime.combine(
+            start_of_week + timedelta(days=1), datetime.min.time()
+        ).replace(hour=7),
+        end=datetime.combine(
+            start_of_week + timedelta(days=1), datetime.min.time()
+        ).replace(hour=8),
+        instructor="Bob Johnson",
+        description="Kickstart your day with HIIT.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#FFD700",
+            font_size=12,
+        ),
+    ),
+    FitnessClass(
+        name="Pilates Core",
+        start=datetime.combine(
+            start_of_week + timedelta(days=2), datetime.min.time()
+        ).replace(hour=7),
+        end=datetime.combine(
+            start_of_week + timedelta(days=2), datetime.min.time()
+        ).replace(hour=8),
+        instructor="Carol Lee",
+        description="Strengthen your core with Pilates.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#ADD8E6",
+            font_size=13,  # black, lightblue
+        ),
+    ),
+    FitnessClass(
+        name="Pilates Stretch",
+        start=datetime.combine(
+            start_of_week + timedelta(days=2), datetime.min.time()
+        ).replace(hour=19),
+        end=datetime.combine(
+            start_of_week + timedelta(days=2), datetime.min.time()
+        ).replace(hour=20),
+        instructor="Carol Lee",
+        description="Evening pilates for flexibility.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#B0E0E6",
+            font_size=13,
+        ),
+    ),
+    FitnessClass(
+        name="Spin Class",
+        start=datetime.combine(
+            start_of_week + timedelta(days=4), datetime.min.time()
+        ).replace(hour=17),
+        end=datetime.combine(
+            start_of_week + timedelta(days=4), datetime.min.time()
+        ).replace(hour=18),
+        instructor="Dan Miller",
+        description="Cardio spin session with energetic music.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#FFFFFF",
+            background_color="#00008B",
+            font_size=12,  # white, darkblue
+        ),
+    ),
+    FitnessClass(
+        name="Morning Spin",
+        start=datetime.combine(
+            start_of_week + timedelta(days=4), datetime.min.time()
+        ).replace(hour=7),
+        end=datetime.combine(
+            start_of_week + timedelta(days=4), datetime.min.time()
+        ).replace(hour=8),
+        instructor="Dan Miller",
+        description="Start your day with a spin workout.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#FFFFFF",
+            background_color="#4682B4",
+            font_size=12,
+        ),
+    ),
+    FitnessClass(
+        name="Zumba",
+        start=datetime.combine(
+            start_of_week + timedelta(days=5), datetime.min.time()
+        ).replace(hour=11),
+        end=datetime.combine(
+            start_of_week + timedelta(days=5), datetime.min.time()
+        ).replace(hour=12),
+        instructor="Eva Gomez",
+        description="Dance your way to fitness with Zumba.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#FFC0CB",
+            font_size=15,  # black, pink
+        ),
+    ),
+    FitnessClass(
+        name="Zumba Party",
+        start=datetime.combine(
+            start_of_week + timedelta(days=5), datetime.min.time()
+        ).replace(hour=18),
+        end=datetime.combine(
+            start_of_week + timedelta(days=5), datetime.min.time()
+        ).replace(hour=19),
+        instructor="Eva Gomez",
+        description="Evening Zumba with party vibes.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#FF69B4",
+            font_size=15,
+        ),
+    ),
+    FitnessClass(
+        name="Stretch & Relax",
+        start=datetime.combine(
+            start_of_week + timedelta(days=6), datetime.min.time()
+        ).replace(hour=10),
+        end=datetime.combine(
+            start_of_week + timedelta(days=6), datetime.min.time()
+        ).replace(hour=11),
+        instructor="Grace Lin",
+        description="Gentle stretching and relaxation.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#000000",
+            background_color="#E0FFFF",
+            font_size=13,
+        ),
+    ),
+    FitnessClass(
+        name="Sunday Bootcamp",
+        start=datetime.combine(
+            start_of_week + timedelta(days=6), datetime.min.time()
+        ).replace(hour=16),
+        end=datetime.combine(
+            start_of_week + timedelta(days=6), datetime.min.time()
+        ).replace(hour=17),
+        instructor="Mike Brown",
+        description="Full body bootcamp to end your week strong.",
+        render_config=FitnessClassRenderConfig(
+            text_color="#FFFFFF",
+            background_color="#228B22",
+            font_size=14,
+        ),
+    ),
+]
 
 
 def load_classes_from_file(language: str = "en") -> list[FitnessClass]:
