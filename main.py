@@ -11,6 +11,7 @@ from js import Uint8Array, File, URL, document
 from pyodide.ffi import create_proxy
 from pyscript import document, display
 from pyweb import pydom
+import json
 
 
 def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) -> str:
@@ -308,10 +309,8 @@ else:
     min_date = date.today()
     max_date = date.today()
 
-
 current_week_start_date = date.today() - timedelta(days=date.today().weekday())
 current_week_end_date = current_week_start_date + timedelta(days=6)
-
 filtered_classes = [
     cls
     for cls in classes
@@ -322,7 +321,6 @@ schedule_div = pydom["#schedule"][0]
 schedule_div._js.innerHTML = render_fitness_classes(filtered_classes, date.today())
 schedule_div._js.classList.remove("d-none")
 
-# Hide the loading
 pydom["#spinner"][0]._js.classList.add("d-none")
 
 schedule_date_input = pydom["#schedule-date"][0]
@@ -337,7 +335,6 @@ pydom["#tools"][0]._js.classList.remove("d-none")
 
 
 def on_date_change(evt):
-    global current_week_start_date, current_week_end_date, filtered_classes
     value = evt.target.value
     if not value:
         return
@@ -355,3 +352,31 @@ def on_date_change(evt):
 
 
 schedule_date_input._js.addEventListener("change", create_proxy(on_date_change))
+
+
+async def upload_file_and_show(e):
+    file_list = e.target.files
+    first_item = file_list.item(0)
+
+    my_bytes: bytes = await get_bytes_from_file(first_item)
+
+    try:
+        data = json.loads(my_bytes.decode("utf-8"))
+        loaded_classes = [
+            FitnessClass.from_dict(item) for item in data["fitness_classes"]
+        ]
+    except Exception as ex:
+        display(f"Failed to load classes: {ex}")
+        loaded_classes = []
+
+    # TODO do something with loaded_classes
+
+
+async def get_bytes_from_file(file):
+    array_buf = await file.arrayBuffer()
+    return array_buf.to_bytes()
+
+
+# pydom["#file-upload"][0]._js.addEventListener(
+#     "change", create_proxy(upload_file_and_show)
+# )

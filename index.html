@@ -54,6 +54,8 @@
             class="form-control ms-2"
             style="max-width: 200px"
           />
+          <!-- <label for="Upload a File"></label>
+          <input type="file" id="file-upload"> -->
           <div class="flex-grow-1"></div>
           <button
             class="btn btn-outline-red ms-2"
@@ -131,32 +133,46 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="infoModalLabel">Information</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body"></div>
-          tbd
+      <div class="modal-content">
+        <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Information</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
         </div>
+        <div class="modal-body"></div>
+        tbd
+      </div>
       </div>
     </div>
 
     <script>
-      document
-        .getElementById("info-btn")
-        .addEventListener("click", function (e) {
-          e.preventDefault();
-          var infoModal = new bootstrap.Modal(
-            document.getElementById("infoModal")
-          );
-          infoModal.show();
-        });
+      const infoBtn = document.getElementById("info-btn");
+      const infoModalEl = document.getElementById("infoModal");
+      let infoModal = new bootstrap.Modal(infoModalEl);
+
+      let isModalOpen = false;
+
+      infoBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      if (isModalOpen) return;
+      infoModal.show();
+      });
+
+      infoModalEl.addEventListener("shown.bs.modal", function () {
+      isModalOpen = true;
+      infoBtn.style.pointerEvents = "none";
+      infoBtn.style.opacity = "0.6";
+      });
+
+      infoModalEl.addEventListener("hidden.bs.modal", function () {
+      isModalOpen = false;
+      infoBtn.style.pointerEvents = "";
+      infoBtn.style.opacity = "";
+      });
     </script>
   </body>
 </html>

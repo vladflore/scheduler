@@ -22,6 +22,23 @@ class FitnessClass:
         default_factory=FitnessClassRenderConfig
     )
 
+    @staticmethod
+    def from_dict(item: dict) -> "FitnessClass":
+        return FitnessClass(
+            name=item["name"],
+            start=datetime.fromisoformat(item["start"]),
+            end=datetime.fromisoformat(item["end"]),
+            instructor=item["instructor"],
+            description=item["description"],
+            render_config=FitnessClassRenderConfig(
+                text_color=item.get("render_config", {}).get("text_color", "#000000"),
+                background_color=item.get("render_config", {}).get(
+                    "background_color", "#FFFFFF"
+                ),
+                font_size=item.get("render_config", {}).get("font_size", 12),
+            ),
+        )
+
 
 CLASSES_INPUT_FILE = "classes_{lang}.json"
 
@@ -30,7 +47,7 @@ start_of_week = today - timedelta(days=today.weekday())
 
 dummy_classes = [
     FitnessClass(
-        name="Yoga Flow",
+        name="Dummy Yoga Flow",
         start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=9),
         end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=10),
         instructor="Alice Smith",
@@ -42,7 +59,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Power Yoga",
+        name="Dummy Power Yoga",
         start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=17),
         end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=18),
         instructor="Alice Smith",
@@ -54,7 +71,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="HIIT Blast",
+        name="Dummy HIIT Blast",
         start=datetime.combine(
             start_of_week + timedelta(days=1), datetime.min.time()
         ).replace(hour=18),
@@ -70,7 +87,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Morning HIIT",
+        name="Dummy Morning HIIT",
         start=datetime.combine(
             start_of_week + timedelta(days=1), datetime.min.time()
         ).replace(hour=7),
@@ -86,7 +103,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Pilates Core",
+        name="Dummy Pilates Core",
         start=datetime.combine(
             start_of_week + timedelta(days=2), datetime.min.time()
         ).replace(hour=7),
@@ -102,7 +119,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Pilates Stretch",
+        name="Dummy Pilates Stretch",
         start=datetime.combine(
             start_of_week + timedelta(days=2), datetime.min.time()
         ).replace(hour=19),
@@ -118,7 +135,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Spin Class",
+        name="Dummy Spin Class",
         start=datetime.combine(
             start_of_week + timedelta(days=4), datetime.min.time()
         ).replace(hour=17),
@@ -134,7 +151,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Morning Spin",
+        name="Dummy Morning Spin",
         start=datetime.combine(
             start_of_week + timedelta(days=4), datetime.min.time()
         ).replace(hour=7),
@@ -150,7 +167,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Zumba",
+        name="Dummy Zumba",
         start=datetime.combine(
             start_of_week + timedelta(days=5), datetime.min.time()
         ).replace(hour=11),
@@ -166,7 +183,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Zumba Party",
+        name="Dummy Zumba Party",
         start=datetime.combine(
             start_of_week + timedelta(days=5), datetime.min.time()
         ).replace(hour=18),
@@ -182,7 +199,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Stretch & Relax",
+        name="Dummy Stretch & Relax",
         start=datetime.combine(
             start_of_week + timedelta(days=6), datetime.min.time()
         ).replace(hour=10),
@@ -198,7 +215,7 @@ dummy_classes = [
         ),
     ),
     FitnessClass(
-        name="Sunday Bootcamp",
+        name="Dummy Sunday Bootcamp",
         start=datetime.combine(
             start_of_week + timedelta(days=6), datetime.min.time()
         ).replace(hour=16),
