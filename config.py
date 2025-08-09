@@ -1,21 +1,29 @@
 from enum import Enum, auto
+import requests
+from dataclasses import dataclass
+import time
 
-LANGUAGE = "en"
 
-WHATSAPP_NUMBER = "+34613429288"
-
-BOOK_VIA_WHATSAPP = False
+@dataclass
+class Config:
+    language: str
+    whatsapp_number: str
+    book_via_whatsapp: bool
 
 
 class DataSourceMode(Enum):
     LOCAL = auto()
-    URL = auto()
+    GH_PAGES = auto()
     DUMMY = auto()
 
 
-DATA_SOURCE_MODE = DataSourceMode.URL
+CLIENT_NAME = "generic-client"
+GH_PAGES_ROOT = f"https://vladflore.github.io/{CLIENT_NAME}"
 
-translations: dict[str, dict[str, str | dict[str, str]]] = {
+DATA_SOURCE_MODE = DataSourceMode.GH_PAGES
+
+
+TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
     "es": {
         "instructor": "Instructor",
         "book_via_whatsapp": "Reservar por WhatsApp",
@@ -71,3 +79,31 @@ translations: dict[str, dict[str, str | dict[str, str]]] = {
         "schedule_title": "Horari de Classes de Fitness",
     },
 }
+
+
+def generate_timestamp():
+    return str(int(time.time()))
+
+
+def load_config() -> Config:
+    try:
+        response = requests.get(f"{GH_PAGES_ROOT}/config.json?v={generate_timestamp()}")
+        response.raise_for_status()
+        data = response.json()
+        return Config(
+            language=data.get("language", "en"),
+            whatsapp_number=data.get("whatsapp_number", "n/a"),
+            book_via_whatsapp=data.get("book_via_whatsapp", False),
+        )
+    except requests.RequestException as e:
+        print(f"Error loading config: {e}")
+        return Config(
+            language="en",
+            whatsapp_number="n/a",
+            book_via_whatsapp=False,
+        )
+
+
+if __name__ == "__main__":
+    config = load_config()
+    print(config)

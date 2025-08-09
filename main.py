@@ -4,18 +4,15 @@ from data import FitnessClass
 from pyodide.ffi import create_proxy
 from data import (
     load_classes_from_file,
-    dummy_classes,
     load_classes_from_url,
     load_dummy_classes,
-    CLASSES_INPUT_FILE_URL,
 )
 from config import (
-    translations,
-    LANGUAGE,
-    WHATSAPP_NUMBER,
-    BOOK_VIA_WHATSAPP,
+    TRANSLATIONS,
     DataSourceMode,
     DATA_SOURCE_MODE,
+    load_config,
+    Config,
 )
 import io
 from fpdf import FPDF
@@ -60,7 +57,7 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
 
     html.append('<div class="schedule-grid">')
     html.append(
-        f'<div class="schedule-header">{translations[LANGUAGE]["time"]} / {translations[LANGUAGE]["date"]}</div>'
+        f'<div class="schedule-header">{TRANSLATIONS[LANGUAGE]["time"]} / {TRANSLATIONS[LANGUAGE]["date"]}</div>'
     )
     for day in days:
         week_day = day.strftime("%A")
@@ -68,14 +65,14 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
         if day == highlighted_date:
             html.append(
                 f'<div class="schedule-header">'
-                f"{translations[LANGUAGE]['week_days'][week_day.lower()]}<br>"
+                f"{TRANSLATIONS[LANGUAGE]['week_days'][week_day.lower()]}<br>"
                 f'<span class="schedule-today">{date_num}</span>'
                 f"</div>"
             )
         else:
             html.append(
                 f'<div class="schedule-header">'
-                f"{translations[LANGUAGE]['week_days'][week_day.lower()]}<br>"
+                f"{TRANSLATIONS[LANGUAGE]['week_days'][week_day.lower()]}<br>"
                 f'<span style="font-size: 1.5em; font-weight: bold;">{date_num}</span>'
                 f"</div>"
             )
@@ -89,7 +86,7 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
             if fitness_class:
                 config = fitness_class.render_config
                 whatsapp_number = WHATSAPP_NUMBER
-                message_template: str = translations[LANGUAGE]["whatsapp_message"]
+                message_template: str = TRANSLATIONS[LANGUAGE]["whatsapp_message"]
                 message = message_template.format(
                     class_name=fitness_class.name,
                     instructor=fitness_class.instructor,
@@ -101,21 +98,21 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
                 if BOOK_VIA_WHATSAPP:
                     book_via_whatsapp = (
                         f'<a class="whatsapp-link" href="{whatsapp_url}" target="_blank">'
-                        f"{translations[LANGUAGE]['book_via_whatsapp']}"
+                        f"{TRANSLATIONS[LANGUAGE]['book_via_whatsapp']}"
                         f"</a>"
                     )
                 else:
                     book_via_whatsapp = (
                         f'<span style="color:gray; font-style:italic; cursor:not-allowed;" '
                         f'title="Feature disabled.">'
-                        f"{translations[LANGUAGE]['book_via_whatsapp']}"
+                        f"{TRANSLATIONS[LANGUAGE]['book_via_whatsapp']}"
                         f"</span>"
                     )
 
                 html.append(
                     f'<div class="schedule-cell" style="color:{config.text_color}; background:{config.background_color};">'
                     f"<strong>{fitness_class.name}</strong><br>"
-                    f"{translations[LANGUAGE]['instructor']}: {fitness_class.instructor}<br>"
+                    f"{TRANSLATIONS[LANGUAGE]['instructor']}: {fitness_class.instructor}<br>"
                     f"{book_via_whatsapp}<br>"
                     "</div>"
                 )
@@ -150,7 +147,7 @@ def create_pdf(classes: list[FitnessClass]) -> FPDF:
 
     pdf.set_y(4)
     pdf.set_font("Helvetica", "B", 18)
-    title = translations[LANGUAGE].get("schedule_title", "Classes Schedule")
+    title = TRANSLATIONS[LANGUAGE].get("schedule_title", "Classes Schedule")
     pdf.set_text_color(40, 40, 80)
     pdf.cell(0, 12, title, align="C", new_x=XPos.LMARGIN, new_y=YPos.NEXT)
     pdf.ln(4)
@@ -195,7 +192,7 @@ def create_pdf(classes: list[FitnessClass]) -> FPDF:
     pdf.cell(
         cell_width_time,
         cell_height,
-        f"{translations[LANGUAGE]['time']} / {translations[LANGUAGE]['date']}",
+        f"{TRANSLATIONS[LANGUAGE]['time']} / {TRANSLATIONS[LANGUAGE]['date']}",
         border=1,
         align="C",
         fill=True,
@@ -204,7 +201,7 @@ def create_pdf(classes: list[FitnessClass]) -> FPDF:
         week_day = day.strftime("%A")
         date_num = day.strftime("%d")
         pdf.set_font("Helvetica", "B", 11)
-        week_label = translations[LANGUAGE]["week_days"][week_day.lower()]
+        week_label = TRANSLATIONS[LANGUAGE]["week_days"][week_day.lower()]
         date_label = date_num
         label = f"{week_label}\n{date_label}"
         x = pdf.get_x()
@@ -313,12 +310,17 @@ def download_pdf(event):
     hidden_link.click()
 
 
-classes = []
+classes: list[FitnessClass] = []
+config: Config = load_config()
 
-if DATA_SOURCE_MODE == DataSourceMode.URL:
-    classes = load_classes_from_url(CLASSES_INPUT_FILE_URL)
+LANGUAGE = config.language
+WHATSAPP_NUMBER = config.whatsapp_number
+BOOK_VIA_WHATSAPP = config.book_via_whatsapp
+
+if DATA_SOURCE_MODE == DataSourceMode.GH_PAGES:
+    classes = load_classes_from_url(lang=LANGUAGE)
 elif DATA_SOURCE_MODE == DataSourceMode.LOCAL:
-    classes = load_classes_from_file(LANGUAGE)
+    classes = load_classes_from_file(lang=LANGUAGE)
 else:
     classes = load_dummy_classes()
 
@@ -350,7 +352,7 @@ schedule_date_input._js.min = min_date.strftime("%Y-%m-%d")
 schedule_date_input._js.max = max_date.strftime("%Y-%m-%d")
 
 schedule_date_label = pydom["#schedule-date-label"][0]
-schedule_date_label._js.innerHTML = translations[LANGUAGE]["schedule_date_label"]
+schedule_date_label._js.innerHTML = TRANSLATIONS[LANGUAGE]["schedule_date_label"]
 
 pydom["#tools"][0]._js.classList.remove("d-none")
 
