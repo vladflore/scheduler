@@ -401,3 +401,5 @@ async def get_bytes_from_file(file):
 # pydom["#file-upload"][0]._js.addEventListener(
 #     "change", create_proxy(upload_file_and_show)
 # )
+
+pydom["#whatsapp-btn"][0]._js.href = f"https://wa.me/{WHATSAPP_NUMBER}"
