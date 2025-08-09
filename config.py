@@ -45,7 +45,7 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         "info_modal_title": "Información",
         "info_modal_content": """
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; background: rgba(153, 94, 10, 0.65); color: white; border-radius: 12px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">¿Interesado en utilizar este planificador para tu centro de fitness?</h3>
+    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">¿Interesado en usar este programador de clases para tu centro de fitness?</h3>
     
     <p style="margin: 0 0 20px 0; font-size: 16px; opacity: 0.95;">
         Contáctame mediante el botón de WhatsApp en la esquina inferior derecha.
@@ -84,7 +84,7 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         "info_modal_title": "Information",
         "info_modal_content": """
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; background: rgba(153, 94, 10, 0.65); color: white; border-radius: 12px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Interested in using this scheduler for your fitness center?</h3>
+    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Interested in using this classes scheduler for your fitness center?</h3>
     
     <p style="margin: 0 0 20px 0; font-size: 16px; opacity: 0.95;">
         Contact me via the WhatsApp button in the bottom-right corner.
@@ -123,7 +123,7 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         "info_modal_title": "Informació",
         "info_modal_content": """
 <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; background: rgba(153, 94, 10, 0.65); color: white; border-radius: 12px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
-    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Interessat a utilitzar aquest planificador per al teu centre de fitness?</h3>
+    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Interessat a utilitzar aquest programador de classes per al teu centre de fitness?</h3>
     
     <p style="margin: 0 0 20px 0; font-size: 16px; opacity: 0.95;">
         Contacta’m mitjançant el botó de WhatsApp a la cantonada inferior dreta.
