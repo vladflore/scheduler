@@ -6,6 +6,7 @@ from data import (
     load_classes_from_file,
     dummy_classes,
     load_classes_from_url,
+    load_dummy_classes,
     CLASSES_INPUT_FILE_URL,
 )
 from config import (
@@ -13,6 +14,8 @@ from config import (
     LANGUAGE,
     WHATSAPP_NUMBER,
     BOOK_VIA_WHATSAPP,
+    DataSourceMode,
+    DATA_SOURCE_MODE,
 )
 import io
 from fpdf import FPDF
@@ -310,7 +313,15 @@ def download_pdf(event):
     hidden_link.click()
 
 
-classes = load_classes_from_url(CLASSES_INPUT_FILE_URL)
+classes = []
+
+if DATA_SOURCE_MODE == DataSourceMode.URL:
+    classes = load_classes_from_url(CLASSES_INPUT_FILE_URL)
+elif DATA_SOURCE_MODE == DataSourceMode.LOCAL:
+    classes = load_classes_from_file(LANGUAGE)
+else:
+    classes = load_dummy_classes()
+
 
 if classes:
     min_date = min(cls.start.date() for cls in classes)

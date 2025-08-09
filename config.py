@@ -1,8 +1,19 @@
-LANGUAGE = "es"
+from enum import Enum, auto
+
+LANGUAGE = "en"
 
 WHATSAPP_NUMBER = "+34613429288"
 
 BOOK_VIA_WHATSAPP = False
+
+
+class DataSourceMode(Enum):
+    LOCAL = auto()
+    URL = auto()
+    DUMMY = auto()
+
+
+DATA_SOURCE_MODE = DataSourceMode.URL
 
 translations: dict[str, dict[str, str | dict[str, str]]] = {
     "es": {

@@ -272,6 +272,10 @@ def load_classes_from_url(url: str) -> list[FitnessClass]:
     return read_data(data)
 
 
+def load_dummy_classes() -> list[FitnessClass]:
+    return dummy_classes
+
+
 if __name__ == "__main__":
     # classes = load_classes_from_file()
     # print(classes)
