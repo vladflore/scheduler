@@ -45,9 +45,9 @@ def read_data(data) -> list[FitnessClass]:
         start = datetime.fromisoformat(fitness_class["start"])
         end = datetime.fromisoformat(fitness_class["end"])
         render_config = FitnessClassRenderConfig(
-            text_color=fitness_class["render_config"].get("text_color", "black"),
+            text_color=fitness_class["render_config"].get("text_color", "#000000"),
             background_color=fitness_class["render_config"].get(
-                "background_color", "white"
+                "background_color", "#FFFFFF"
             ),
         )
         fitness_class = FitnessClass(
