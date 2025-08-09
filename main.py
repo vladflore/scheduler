@@ -358,6 +358,7 @@ pydom["#tools"][0]._js.classList.remove("d-none")
 
 
 def on_date_change(evt):
+    global filtered_classes, current_week_start_date, current_week_end_date
     value = evt.target.value
     if not value:
         return
