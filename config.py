@@ -18,7 +18,8 @@ class DataSourceMode(Enum):
 
 
 CLIENT_NAME = "generic-client"
-GH_PAGES_ROOT = f"https://vladflore.github.io/{CLIENT_NAME}"
+OWNER = "vladflore"
+GH_PAGES_ROOT = f"https://{OWNER}.github.io/{CLIENT_NAME}"
 
 DATA_SOURCE_MODE = DataSourceMode.GH_PAGES
 
