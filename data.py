@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 from datetime import datetime, date
 import json
 from datetime import timedelta
+import requests
+from config import LANGUAGE
 
 
 @dataclass
@@ -41,6 +43,7 @@ class FitnessClass:
 
 
 CLASSES_INPUT_FILE = "classes_{lang}.json"
+CLASSES_INPUT_FILE_URL = f"https://raw.githubusercontent.com/vladflore/scheduler/refs/heads/main/classes_{LANGUAGE}.json"
 
 today = date.today()
 start_of_week = today - timedelta(days=today.weekday())
@@ -233,34 +236,46 @@ dummy_classes = [
 ]
 
 
-def load_classes_from_file(language: str = "en") -> list[FitnessClass]:
+def read_data(data) -> list[FitnessClass]:
     classes: list[FitnessClass] = []
-
-    with open(CLASSES_INPUT_FILE.format(lang=language), "r") as file:
-        data = json.load(file)
-        for fitness_class in data["fitness_classes"]:
-            start = datetime.fromisoformat(fitness_class["start"])
-            end = datetime.fromisoformat(fitness_class["end"])
-            render_config = FitnessClassRenderConfig(
-                text_color=fitness_class["render_config"].get("text_color", "black"),
-                background_color=fitness_class["render_config"].get(
-                    "background_color", "white"
-                ),
-                font_size=fitness_class["render_config"].get("font_size", 12),
-            )
-            fitness_class = FitnessClass(
-                name=fitness_class["name"],
-                start=start,
-                end=end,
-                instructor=fitness_class["instructor"],
-                description=fitness_class["description"],
-                render_config=render_config,
-            )
-            classes.append(fitness_class)
-
+    for fitness_class in data["fitness_classes"]:
+        start = datetime.fromisoformat(fitness_class["start"])
+        end = datetime.fromisoformat(fitness_class["end"])
+        render_config = FitnessClassRenderConfig(
+            text_color=fitness_class["render_config"].get("text_color", "black"),
+            background_color=fitness_class["render_config"].get(
+                "background_color", "white"
+            ),
+            font_size=fitness_class["render_config"].get("font_size", 12),
+        )
+        fitness_class = FitnessClass(
+            name=fitness_class["name"],
+            start=start,
+            end=end,
+            instructor=fitness_class["instructor"],
+            description=fitness_class["description"],
+            render_config=render_config,
+        )
+        classes.append(fitness_class)
     return classes
 
 
+def load_classes_from_file(language: str = "en") -> list[FitnessClass]:
+    with open(CLASSES_INPUT_FILE.format(lang=language), "r") as file:
+        data = json.load(file)
+        return read_data(data)
+
+
+def load_classes_from_url(url: str) -> list[FitnessClass]:
+    response = requests.get(url)
+    data = response.json()
+    return read_data(data)
+
+
 if __name__ == "__main__":
-    classes = load_classes_from_file()
+    # classes = load_classes_from_file()
+    # print(classes)
+    classes = load_classes_from_url(
+        "https://raw.githubusercontent.com/vladflore/scheduler/refs/heads/main/classes_en.json"
+    )
     print(classes)

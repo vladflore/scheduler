@@ -2,8 +2,18 @@ from datetime import datetime, date, timedelta
 from collections import defaultdict
 from data import FitnessClass
 from pyodide.ffi import create_proxy
-from data import load_classes_from_file, dummy_classes
-from config import translations, LANGUAGE, WHATSAPP_NUMBER, BOOK_VIA_WHATSAPP
+from data import (
+    load_classes_from_file,
+    dummy_classes,
+    load_classes_from_url,
+    CLASSES_INPUT_FILE_URL,
+)
+from config import (
+    translations,
+    LANGUAGE,
+    WHATSAPP_NUMBER,
+    BOOK_VIA_WHATSAPP,
+)
 import io
 from fpdf import FPDF
 from fpdf.enums import XPos, YPos
@@ -300,7 +310,7 @@ def download_pdf(event):
     hidden_link.click()
 
 
-classes = dummy_classes
+classes = load_classes_from_url(CLASSES_INPUT_FILE_URL)
 
 if classes:
     min_date = min(cls.start.date() for cls in classes)
