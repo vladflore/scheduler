@@ -106,13 +106,11 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
 }
 
 
-def generate_timestamp():
-    return str(int(time.time()))
-
-
 def load_config() -> Config:
     try:
-        response = requests.get(f"{GH_PAGES_ROOT}/config.json?v={generate_timestamp()}")
+        response = requests.get(
+            f"{GH_PAGES_ROOT}/config.json?v={str(int(time.time()))}"
+        )
         response.raise_for_status()
         data = response.json()
         return Config(

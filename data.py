@@ -4,6 +4,7 @@ import json
 from datetime import timedelta
 import requests
 from config import GH_PAGES_ROOT
+import time
 
 
 @dataclass
@@ -73,7 +74,9 @@ def load_classes_from_file(lang: str) -> list[FitnessClass]:
 
 
 def load_classes_from_url(lang: str) -> list[FitnessClass]:
-    response = requests.get(f"{GH_PAGES_ROOT}/classes_{lang}.json")
+    response = requests.get(
+        f"{GH_PAGES_ROOT}/classes_{lang}.json?v={str(int(time.time()))}"
+    )
     data = response.json()
     return read_data(data)
 
