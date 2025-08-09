@@ -19,7 +19,6 @@ class FitnessClass:
     start: datetime
     end: datetime
     instructor: str
-    description: str
     render_config: FitnessClassRenderConfig = field(
         default_factory=FitnessClassRenderConfig
     )
@@ -31,7 +30,6 @@ class FitnessClass:
             start=datetime.fromisoformat(item["start"]),
             end=datetime.fromisoformat(item["end"]),
             instructor=item["instructor"],
-            description=item["description"],
             render_config=FitnessClassRenderConfig(
                 text_color=item.get("render_config", {}).get("text_color", "#000000"),
                 background_color=item.get("render_config", {}).get(
@@ -57,7 +55,6 @@ def read_data(data) -> list[FitnessClass]:
             start=start,
             end=end,
             instructor=fitness_class["instructor"],
-            description=fitness_class["description"],
             render_config=render_config,
         )
         classes.append(fitness_class)
@@ -87,7 +84,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=9),
             end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=10),
             instructor="Alice Smith",
-            description="A gentle yoga class to start your week.",
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#800080",
@@ -98,7 +94,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             start=datetime.combine(start_of_week, datetime.min.time()).replace(hour=17),
             end=datetime.combine(start_of_week, datetime.min.time()).replace(hour=18),
             instructor="Alice Smith",
-            description="Dynamic yoga for strength and flexibility.",
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#4B0082",
@@ -113,7 +108,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=1), datetime.min.time()
             ).replace(hour=19),
             instructor="Bob Johnson",
-            description="High intensity interval training for all levels.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFFF00",
@@ -128,7 +122,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=1), datetime.min.time()
             ).replace(hour=8),
             instructor="Bob Johnson",
-            description="Kickstart your day with HIIT.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFD700",
@@ -143,7 +136,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=2), datetime.min.time()
             ).replace(hour=8),
             instructor="Carol Lee",
-            description="Strengthen your core with Pilates.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#ADD8E6",
@@ -158,7 +150,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=2), datetime.min.time()
             ).replace(hour=20),
             instructor="Carol Lee",
-            description="Evening pilates for flexibility.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#B0E0E6",
@@ -173,7 +164,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=4), datetime.min.time()
             ).replace(hour=18),
             instructor="Dan Miller",
-            description="Cardio spin session with energetic music.",
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#00008B",
@@ -188,7 +178,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=4), datetime.min.time()
             ).replace(hour=8),
             instructor="Dan Miller",
-            description="Start your day with a spin workout.",
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#4682B4",
@@ -203,7 +192,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=5), datetime.min.time()
             ).replace(hour=12),
             instructor="Eva Gomez",
-            description="Dance your way to fitness with Zumba.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFC0CB",
@@ -218,7 +206,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=5), datetime.min.time()
             ).replace(hour=19),
             instructor="Eva Gomez",
-            description="Evening Zumba with party vibes.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FF69B4",
@@ -233,7 +220,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=6), datetime.min.time()
             ).replace(hour=11),
             instructor="Grace Lin",
-            description="Gentle stretching and relaxation.",
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#E0FFFF",
@@ -248,7 +234,6 @@ def load_dummy_classes() -> list[FitnessClass]:
                 start_of_week + timedelta(days=6), datetime.min.time()
             ).replace(hour=17),
             instructor="Mike Brown",
-            description="Full body bootcamp to end your week strong.",
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#228B22",

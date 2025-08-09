@@ -5,7 +5,6 @@
       "start": "2025-08-05T09:00:00",
       "end": "2025-08-05T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Cardio exercise for all levels.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#D32F2F"
@@ -16,7 +15,6 @@
       "start": "2025-08-05T10:30:00",
       "end": "2025-08-05T11:15:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen your core muscles.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#FFD54F"
@@ -27,7 +25,6 @@
       "start": "2025-08-05T18:00:00",
       "end": "2025-08-05T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Dance to get fit.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#F06292"
@@ -38,7 +35,6 @@
       "start": "2025-08-06T08:00:00",
       "end": "2025-08-06T09:00:00",
       "instructor": "Eva Green",
-      "description": "Morning spinning class.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#8E24AA"
@@ -49,7 +45,6 @@
       "start": "2025-08-06T09:30:00",
       "end": "2025-08-06T10:30:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen and tone with Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#64B5F6"
@@ -60,7 +55,6 @@
       "start": "2025-08-06T18:00:00",
       "end": "2025-08-06T19:00:00",
       "instructor": "Bob Johnson",
-      "description": "Learn the fundamentals of boxing.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#212121"
@@ -71,7 +65,6 @@
       "start": "2025-08-07T07:30:00",
       "end": "2025-08-07T08:30:00",
       "instructor": "Alice Smith",
-      "description": "Flowing yoga for midweek.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#43A047"
@@ -82,7 +75,6 @@
       "start": "2025-08-07T09:00:00",
       "end": "2025-08-07T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Build muscle and strength.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#FFA726"
@@ -93,7 +85,6 @@
       "start": "2025-08-07T18:30:00",
       "end": "2025-08-07T19:30:00",
       "instructor": "Eva Green",
-      "description": "Fun dance workout.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#E1BEE7"
@@ -104,7 +95,6 @@
       "start": "2025-08-08T09:00:00",
       "end": "2025-08-08T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Morning Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#64B5F6"
@@ -115,7 +105,6 @@
       "start": "2025-08-08T10:30:00",
       "end": "2025-08-08T11:15:00",
       "instructor": "Bob Johnson",
-      "description": "Improve everyday movement.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#388E3C"
@@ -126,7 +115,6 @@
       "start": "2025-08-08T18:00:00",
       "end": "2025-08-08T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Relaxing yoga to end the week.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#43A047"
@@ -137,7 +125,6 @@
       "start": "2025-08-09T08:00:00",
       "end": "2025-08-09T09:00:00",
       "instructor": "Alice Smith",
-      "description": "Saturday morning yoga.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#388E3C"
@@ -148,7 +135,6 @@
       "start": "2025-08-09T09:30:00",
       "end": "2025-08-09T10:30:00",
       "instructor": "Bob Johnson",
-      "description": "Outdoor bootcamp session.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#D32F2F"
@@ -159,7 +145,6 @@
       "start": "2025-08-09T11:00:00",
       "end": "2025-08-09T12:00:00",
       "instructor": "Eva Green",
-      "description": "Improve flexibility and mobility.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#B2DFDB"
@@ -170,7 +155,6 @@
       "start": "2025-08-10T09:00:00",
       "end": "2025-08-10T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Sunday Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#1E88E5"
@@ -181,7 +165,6 @@
       "start": "2025-08-10T10:30:00",
       "end": "2025-08-10T11:15:00",
       "instructor": "Alice Smith",
-      "description": "Fun exercise for all ages.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#FBC02D"
@@ -192,7 +175,6 @@
       "start": "2025-08-10T18:00:00",
       "end": "2025-08-10T18:45:00",
       "instructor": "Eva Green",
-      "description": "Guided meditation session.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#E1BEE7"
@@ -203,7 +185,6 @@
       "start": "2025-08-11T09:00:00",
       "end": "2025-08-11T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Cardio exercise for all levels.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#D32F2F"
@@ -214,7 +195,6 @@
       "start": "2025-08-11T10:30:00",
       "end": "2025-08-11T11:15:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen your core muscles.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#FFD54F"
@@ -225,7 +205,6 @@
       "start": "2025-08-11T18:00:00",
       "end": "2025-08-11T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Dance to get fit.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#F06292"
@@ -236,7 +215,6 @@
       "start": "2025-08-12T08:00:00",
       "end": "2025-08-12T09:00:00",
       "instructor": "Eva Green",
-      "description": "Morning spinning class.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#8E24AA"
@@ -247,7 +225,6 @@
       "start": "2025-08-12T09:30:00",
       "end": "2025-08-12T10:30:00",
       "instructor": "Cathy Lee",
-      "description": "Strengthen and tone with Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#64B5F6"
@@ -258,7 +235,6 @@
       "start": "2025-08-12T18:00:00",
       "end": "2025-08-12T19:00:00",
       "instructor": "Bob Johnson",
-      "description": "Learn the fundamentals of boxing.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#212121"
@@ -269,7 +245,6 @@
       "start": "2025-08-13T07:30:00",
       "end": "2025-08-13T08:30:00",
       "instructor": "Alice Smith",
-      "description": "Flowing yoga for midweek.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#43A047"
@@ -280,7 +255,6 @@
       "start": "2025-08-13T09:00:00",
       "end": "2025-08-13T10:00:00",
       "instructor": "Bob Johnson",
-      "description": "Build muscle and strength.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#FFA726"
@@ -291,7 +265,6 @@
       "start": "2025-08-13T18:30:00",
       "end": "2025-08-13T19:30:00",
       "instructor": "Eva Green",
-      "description": "Fun dance workout.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#E1BEE7"
@@ -302,7 +275,6 @@
       "start": "2025-08-14T09:00:00",
       "end": "2025-08-14T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Morning Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#64B5F6"
@@ -313,7 +285,6 @@
       "start": "2025-08-14T10:30:00",
       "end": "2025-08-14T11:15:00",
       "instructor": "Bob Johnson",
-      "description": "Improve everyday movement.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#388E3C"
@@ -324,7 +295,6 @@
       "start": "2025-08-14T18:00:00",
       "end": "2025-08-14T19:00:00",
       "instructor": "Alice Smith",
-      "description": "Relaxing yoga to end the week.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#43A047"
@@ -335,7 +305,6 @@
       "start": "2025-08-15T08:00:00",
       "end": "2025-08-15T09:00:00",
       "instructor": "Alice Smith",
-      "description": "Saturday morning yoga.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#388E3C"
@@ -346,7 +315,6 @@
       "start": "2025-08-15T09:30:00",
       "end": "2025-08-15T10:30:00",
       "instructor": "Bob Johnson",
-      "description": "Outdoor bootcamp session.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#D32F2F"
@@ -357,7 +325,6 @@
       "start": "2025-08-15T11:00:00",
       "end": "2025-08-15T12:00:00",
       "instructor": "Eva Green",
-      "description": "Improve flexibility and mobility.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#B2DFDB"
@@ -368,7 +335,6 @@
       "start": "2025-08-16T09:00:00",
       "end": "2025-08-16T10:00:00",
       "instructor": "Cathy Lee",
-      "description": "Sunday Pilates.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#1E88E5"
@@ -379,7 +345,6 @@
       "start": "2025-08-16T10:30:00",
       "end": "2025-08-16T11:15:00",
       "instructor": "Alice Smith",
-      "description": "Fun exercise for all ages.",
       "render_config": {
         "text_color": "#FFFFFF",
         "background_color": "#FBC02D"
@@ -390,7 +355,6 @@
       "start": "2025-08-16T18:00:00",
       "end": "2025-08-16T18:45:00",
       "instructor": "Eva Green",
-      "description": "Guided meditation session.",
       "render_config": {
         "text_color": "#000000",
         "background_color": "#E1BEE7"
