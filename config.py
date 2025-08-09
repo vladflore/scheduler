@@ -41,6 +41,8 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         },
         "schedule_date_label": "Ir a la fecha",
         "schedule_title": "Horario de Clases de Fitness",
+        "info_modal_title": "Información",
+        "info_modal_content": "¿Te gustaría usar este programador para tu centro de fitness? Contáctame a través del botón de WhatsApp en la esquina inferior derecha.",
     },
     "en": {
         "instructor": "Instructor",
@@ -59,6 +61,27 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         },
         "schedule_date_label": "Go to date",
         "schedule_title": "Fitness Classes Schedule",
+        "info_modal_title": "Information",
+        "info_modal_content": """
+<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; padding: 24px; background: rgba(153, 94, 10, 0.65); color: white; border-radius: 12px; text-align: center; box-shadow: 0 8px 32px rgba(0,0,0,0.1);">
+    <h3 style="margin: 0 0 16px 0; font-size: 24px; font-weight: 600;">Interested in using this scheduler for your fitness center?</h3>
+    
+    <p style="margin: 0 0 20px 0; font-size: 16px; opacity: 0.95;">
+        Contact me via the WhatsApp button in the bottom-right corner.
+    </p>
+    
+    <div style="text-align: left; background: rgba(255,255,255,0.1); padding: 20px; border-radius: 8px; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+        <h4 style="margin: 0 0 12px 0; font-size: 18px; font-weight: 500;">Features:</h4>
+        <ul style="margin: 0; padding-left: 20px; line-height: 1.6;">
+            <li style="margin-bottom: 8px;">Add your own classes with the information you need.</li>
+            <li style="margin-bottom: 8px;">Book classes via WhatsApp.</li>
+            <li style="margin-bottom: 8px;">Print the schedule as a PDF for easy sharing.</li>
+            <li style="margin-bottom: 8px;">Add your own logo and colors.</li>
+            <li style="margin-bottom: 0;">Languages supported: English, Spanish, and Catalan.</li>
+        </ul>
+    </div>
+</div>
+        """,
     },
     "cat": {
         "instructor": "Instructor",
@@ -77,6 +100,8 @@ TRANSLATIONS: dict[str, dict[str, str | dict[str, str]]] = {
         },
         "schedule_date_label": "Anar a la data",
         "schedule_title": "Horari de Classes de Fitness",
+        "info_modal_title": "Informació",
+        "info_modal_content": "Vols utilitzar aquest planificador per al teu centre de fitness? Contacta’m mitjançant el botó de WhatsApp a la cantonada inferior dreta.",
     },
 }
 

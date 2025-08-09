@@ -376,32 +376,15 @@ def on_date_change(evt):
 
 schedule_date_input._js.addEventListener("change", create_proxy(on_date_change))
 
-
-async def upload_file_and_show(e):
-    file_list = e.target.files
-    first_item = file_list.item(0)
-
-    my_bytes: bytes = await get_bytes_from_file(first_item)
-
-    try:
-        data = json.loads(my_bytes.decode("utf-8"))
-        loaded_classes = [
-            FitnessClass.from_dict(item) for item in data["fitness_classes"]
-        ]
-    except Exception as ex:
-        display(f"Failed to load classes: {ex}")
-        loaded_classes = []
-
-    # TODO do something with loaded_classes
-
-
-async def get_bytes_from_file(file):
-    array_buf = await file.arrayBuffer()
-    return array_buf.to_bytes()
-
-
-# pydom["#file-upload"][0]._js.addEventListener(
-#     "change", create_proxy(upload_file_and_show)
-# )
-
 pydom["#whatsapp-btn"][0]._js.href = f"https://wa.me/{WHATSAPP_NUMBER}"
+modal = pydom["#infoModalLabel"][0]
+modal._js.innerHTML = TRANSLATIONS[LANGUAGE]["info_modal_title"]
+
+modal_body = pydom["#modal-body"][0]
+
+
+def load_modal_content():
+    return TRANSLATIONS[LANGUAGE].get("info_modal_content", "No information available.")
+
+
+modal_body._js.innerHTML = load_modal_content()
