@@ -109,10 +109,15 @@ def render_fitness_classes(classes: list[FitnessClass], highlighted_date: date) 
                         f"</span>"
                     )
 
+                if fitness_class.instructor:
+                    instructor_text = f"{TRANSLATIONS[LANGUAGE]['instructor']}: {fitness_class.instructor}"
+                else:
+                    instructor_text = ""
+
                 html.append(
                     f'<div class="schedule-cell" style="color:{config.text_color}; background:{config.background_color};">'
                     f"<strong>{fitness_class.name}</strong><br>"
-                    f"{TRANSLATIONS[LANGUAGE]['instructor']}: {fitness_class.instructor}<br>"
+                    f"{instructor_text}<br>"
                     f"{book_via_whatsapp}<br>"
                     "</div>"
                 )
