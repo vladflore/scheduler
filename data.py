@@ -11,7 +11,6 @@ import time
 class FitnessClassRenderConfig:
     text_color: str = "black"
     background_color: str = "white"
-    font_size: int = 12
 
 
 @dataclass
@@ -38,7 +37,6 @@ class FitnessClass:
                 background_color=item.get("render_config", {}).get(
                     "background_color", "#FFFFFF"
                 ),
-                font_size=item.get("render_config", {}).get("font_size", 12),
             ),
         )
 
@@ -53,7 +51,6 @@ def read_data(data) -> list[FitnessClass]:
             background_color=fitness_class["render_config"].get(
                 "background_color", "white"
             ),
-            font_size=fitness_class["render_config"].get("font_size", 12),
         )
         fitness_class = FitnessClass(
             name=fitness_class["name"],
@@ -94,7 +91,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#800080",
-                font_size=14,  # white, purple
             ),
         ),
         FitnessClass(
@@ -106,7 +102,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#4B0082",
-                font_size=13,
             ),
         ),
         FitnessClass(
@@ -122,7 +117,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFFF00",
-                font_size=12,  # black, yellow
             ),
         ),
         FitnessClass(
@@ -138,7 +132,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFD700",
-                font_size=12,
             ),
         ),
         FitnessClass(
@@ -154,7 +147,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#ADD8E6",
-                font_size=13,  # black, lightblue
             ),
         ),
         FitnessClass(
@@ -170,7 +162,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#B0E0E6",
-                font_size=13,
             ),
         ),
         FitnessClass(
@@ -186,7 +177,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#00008B",
-                font_size=12,  # white, darkblue
             ),
         ),
         FitnessClass(
@@ -202,7 +192,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#4682B4",
-                font_size=12,
             ),
         ),
         FitnessClass(
@@ -218,7 +207,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FFC0CB",
-                font_size=15,  # black, pink
             ),
         ),
         FitnessClass(
@@ -234,7 +222,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#FF69B4",
-                font_size=15,
             ),
         ),
         FitnessClass(
@@ -250,7 +237,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#000000",
                 background_color="#E0FFFF",
-                font_size=13,
             ),
         ),
         FitnessClass(
@@ -266,11 +252,6 @@ def load_dummy_classes() -> list[FitnessClass]:
             render_config=FitnessClassRenderConfig(
                 text_color="#FFFFFF",
                 background_color="#228B22",
-                font_size=14,
             ),
         ),
     ]
-
-
-if __name__ == "__main__":
-    ...
